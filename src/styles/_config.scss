@@ -2,7 +2,7 @@
   Config
 \*------------------------------------*/
 
-[data-typesettings] {
+:root {
   /* Color */
   --ts-color-body: #{palette(gray, dark)};
   --ts-color-heading: #{palette(black)};

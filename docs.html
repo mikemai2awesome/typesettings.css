@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Typesettings.css</title>
+  <link rel="stylesheet" href="src/styles/typesettings.css">
+</head>
+<body>
+  <a href="#content">
+    Skip to content
+  </a>
+  <div data-typesettings="golden dark">
+    <nav>
+      <ul>
+        <li>
+          <a href="javascript:">
+            <strong>Typesettings.css</strong>
+          </a>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <a href="javascript:">Advanced</a>
+            </li>
+            <li>
+              <a href="javascript:">Examples</a>
+            </li>
+            <li>
+              <a href="javascript:">Author</a>
+            </li>
+            <li>
+              <a href="javascript:">Download</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <main id="content">
+      <article>
+        <header>
+          <h1>
+            Advanced Usage
+          </h1>
+          <h2>
+            Bells &amp; Whistles
+          </h2>
+        </header>
+        <section>
+          <h3>
+            Page Banner
+          </h3>
+          <p>
+            If you want to enable a page banner, create a <code>&lt;header&gt;</code> tag with the attribute <code>role=&quot;banner&quot;</code>.
+          </p>
+          <h4>
+            Demo
+          </h4>
+          <header role="banner">
+            <h1>
+              Banner Heading
+            </h1>
+            <h2>
+              Banner Subheading
+            </h2>
+          </header>
+          <h4>
+            Code Snippet
+          </h4>
+          <pre><code>&lt;header role=&quot;banner&quot;&gt;<br>&nbsp;&hellip;&nbsp;<br>&lt;/header&gt;</code></pre>
+          <h3>
+            Drop Cap
+          </h3>
+          <p>
+            You can activate drop cap by using a <code>&lt;p&gt;</code> inside the page banner.
+          </p>
+          <h4>
+            Demo
+          </h4>
+          <header role="banner">
+            <p>
+              Science investigates; religion interprets. Science gives man knowledge, which is power; religion gives man wisdom, which is control. Science deals mainly with facts; religion deals mainly with values. The two are not rivals.
+            </p>
+          </header>
+          <h4>
+            Code Snippet
+          </h4>
+          <pre><code>&lt;header role=&quot;banner&quot;&gt;<br>&nbsp;&lt;p&gt;&hellip;&lt;/p&gt;&nbsp;<br>&lt;/header&gt;</code></pre>
+        </section>
+        <hr>
+        <section>
+          <h3>
+            Kitchen Sink
+          </h3>
+          <p>
+            Paragraphs. <strong>Bold</strong>, <em>italic</em>, <a href="javascript:">linked</a>, <abbr aria-label="Abbreviation">abbr</abbr>, <code>code</code>, <small>small</small>.
+          </p>
+          <p>
+            The ultimate measure of a man is not where he stands in moments of comfort and convenience, but where he stands at times of challenge and controversy.
+          </p>
+          <aside>
+            <p>
+              Aside content.
+            </p>
+          </aside>
+          <p>
+            The function of education is to teach one to think intensively and to think critically. Intelligence plus character&mdash;that is the goal of true education.
+          </p>
+          <p>
+            In the end, we will remember not the words of our enemies, but the silence of our friends.
+          </p>
+          <blockquote>
+            <p>
+              <q>
+                Darkness cannot drive out darkness; only <q>light</q> can do that. Hate cannot drive out hate; only <q>love</q> can do that.
+              </q>
+            </p>
+            <p>
+              <q>
+                The time is always right to do what is right.
+              </q>
+            </p>
+          </blockquote>
+          <ul>
+            <li>
+              First level item
+            </li>
+            <li>
+              First level item
+              <ol>
+                <li>
+                  Second level item
+                  <ul>
+                    <li>
+                      Third level item
+                    </li>
+                    <li>
+                      Third level item
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Second level item
+                </li>
+              </ol>
+            </li>
+            <li>
+              First level item
+            </li>
+          </ul>
+          <ol>
+            <li>
+              First level item
+            </li>
+            <li>
+              First level item
+              <ul>
+                <li>
+                  Second level item
+                  <ol>
+                    <li>
+                      Third level item
+                    </li>
+                    <li>
+                      Third level item
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  Second level item
+                </li>
+              </ul>
+            </li>
+            <li>
+              First level item
+            </li>
+          </ol>
+          <header>
+            <h1>
+              Article heading text
+            </h1>
+            <h2>
+              Article subheading text
+            </h2>
+          </header>
+          <h2>
+            H2 heading text
+          </h2>
+          <h3>
+            H3 heading text
+          </h3>
+          <h4>
+            H4 heading text
+          </h4>
+          <h5>
+            H5 heading text
+          </h5>
+          <h6>
+            H6 heading text
+          </h6>
+          <details>
+            <summary><h2>H2 summary heading text</h2></summary>
+            <p>This is the full details.</p>
+          </details>
+          <details>
+            <summary><h3>H3 summary heading text</h3></summary>
+            <p>This is the full details.</p>
+          </details>
+          <details>
+            <summary><h4>H4 summary heading text</h4></summary>
+            <p>This is the full details.</p>
+          </details>
+          <details>
+            <summary><h5>H5 summary heading text</h5></summary>
+            <p>This is the full details.</p>
+          </details>
+          <details>
+            <summary><h6>H6 summary heading text</h6></summary>
+            <p>This is the full details.</p>
+          </details>
+          <pre><code>pre&nbsp;{<br>&nbsp;&nbsp;padding: .5em 1em; color: black; border-left: 5px solid; background-color: white;<br>}</code></pre>
+          <figure>
+            <img src="https://placehold.it/1600x900" alt="">
+            <figcaption>
+              Figure caption
+            </figcaption>
+          </figure>
+          <figure>
+            <table>
+              <thead>
+                <tr>
+                  <th>Heading</th>
+                  <th width="30">Heading</th>
+                  <th width="30">Heading</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>cell</td>
+                  <td>cell</td>
+                  <td>cell</td>
+                </tr>
+                <tr>
+                  <td>cell</td>
+                  <td>cell</td>
+                  <td>cell</td>
+                </tr>
+              </tbody>
+            </table>
+            <figcaption>Table caption.</figcaption>
+          </figure>
+          <h4>Scripts</h4>
+          <p>This is a super<sup>script</sup>. This is a sub<sub>script</sub>.</p>
+          <h4>Definition List</h4>
+          <dl>
+            <dt>Beast of Bodmin</dt>
+            <dd>A large feline inhabiting Bodmin Moor.</dd>
+            <dt>Morgawr</dt>
+            <dd>A sea serpent.</dd>
+            <dt>Owlman</dt>
+            <dd>A giant owl-like creature.</dd>
+          </dl>
+          <h4>Progress</h4>
+          <progress value="22" max="100"></progress>
+          <h4>Form</h4>
+          <form action="submit">
+            <fieldset>
+              <legend>This is a fieldset</legend>
+              <ol>
+                <li>
+                  <label>
+                    Textarea
+                    <textarea name="textarea" rows="5" placeholder="Enter a paragraph"></textarea>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    Input
+                    <input type="text" placeholder="Enter text">
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    Select
+                    <select name="select" id="select"><optgroup><option value="Select" disabled selected>Select</option><option value="Option 1">Option 1</option></optgroup></select>
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+            <fieldset>
+              <legend>This is another fieldset</legend>
+              <ol>
+                <li>
+                  <label>
+                    <input type="radio" name="radio">
+                    This is a radio input.
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="radio" name="radio">
+                    This is a radio input.
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+            <fieldset>
+              <legend>This is yet another fieldset</legend>
+              <ul>
+                <li>
+                  <label>
+                    <input type="checkbox" name="checkbox">
+                    This is a checkbox input.
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="checkbox">
+                    This is a checkbox input.
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+            <p>
+              <input name="file-upload" type="file">
+            </p>
+            <p>
+              <button>Button</button>
+            </p>
+          </form>
+          <footer>
+            <small>
+              by
+              <address>
+                <a title="Posts by Author Name" href="javascript:">
+                Author Name
+                </a>
+              </address>
+              on
+              <time datetime="2009-11-04">
+              November 4th, 2009
+              </time>
+            </small>
+          </footer>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
