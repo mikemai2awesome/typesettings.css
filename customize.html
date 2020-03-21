@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Customize | Typesettings.css</title>
+  <link rel="stylesheet" href="src/styles/typesettings.css">
+  <style>
+  </style>
+</head>
+<body>
+  <a href="#content">
+    Skip to content
+  </a>
+  <div data-typesettings="golden">
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">
+            <strong>Typesettings.css</strong>
+          </a>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <a href="docs.html">Docs</a>
+            </li>
+            <li>
+              <a href="customize.html">Customize</a>
+            </li>
+            <li>
+              <a href="javascript:">Examples</a>
+            </li>
+            <li>
+              <a href="javascript:">Download</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <main id="content">
+      <article>
+        <header>
+          <h1>
+            Easy Customization
+          </h1>
+          <h2>
+            Using <abbr aria-label="Cascading Stylesheet">CSS</abbr> custom properties
+          </h2>
+        </header>
+        <section aria-labelledby="variables">
+          <h3 id="variables">
+            Variables
+          </h3>
+          <p>
+            You can easily customize the styles by defining the available <abbr aria-label="Cascading Stylesheet">CSS</abbr> custom properties (variables) in the <code>:root</code>. Your own styles should come after <code>typesettings.css</code>.
+          </p>
+          <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;[path]/typesettings.css&quot;&gt;<br>&lt;style&gt;<br>&nbsp;&nbsp;:root {<br>&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;}<br>&lt;/style&gt;</code></pre>
+        </section>
+        <hr>
+        <section aria-labelledby="colors">
+          <h3 id="colors">
+            Colors
+          </h3>
+          <pre><code>:root {<br>&nbsp;&nbsp;--ts-color-body: [custom value];<br>&nbsp;&nbsp;--ts-color-heading: [custom value];<br>&nbsp;&nbsp;--ts-color-link: [custom value];<br>&nbsp;&nbsp;--ts-color-background: [custom value];<br>&nbsp;&nbsp;--ts-color-border: [custom value];<br>}</code></pre>
+          <h5>Example</h5>
+          <pre><code>--ts-color-link: #0000ff;</code></pre>
+        </section>
+        <section aria-labelledby="font-family">
+          <h3 id="font-family">
+            Font-Family
+          </h3>
+          <pre><code>:root {<br>&nbsp;&nbsp;--ts-font-family-serif: [custom value];<br>&nbsp;&nbsp;--ts-font-family-sans: [custom value];<br>&nbsp;&nbsp;--ts-font-family-sans-alt: [custom value];<br>&nbsp;&nbsp;--ts-font-family-monospace: [custom value];<br>}</code></pre>
+          <h5>Example</h5>
+          <pre><code>--ts-font-family-sans: 'Open Sans', sans-serif;</code></pre>
+        </section>
+        <section aria-labelledby="font-weight">
+          <h3 id="font-weight">
+            Font-Weight
+          </h3>
+          <pre><code>:root {<br>&nbsp;&nbsp;--ts-font-weight-regular: [custom value];<br>&nbsp;&nbsp;--ts-font-weight-bold: [custom value];<br>}</code></pre>
+          <h5>Example</h5>
+          <pre><code>--ts-font-weight-bold: 600;</code></pre>
+        </section>
+        <section aria-labelledby="paragraph">
+          <h3 id="paragraph">
+            Paragraph
+          </h3>
+          <pre><code>:root {<br>&nbsp;&nbsp;--ts-paragraph-spacing: [custom value];<br>&nbsp;&nbsp;--ts-paragraph-indent: [custom value];<br>}</code></pre>
+          <h5>Example</h5>
+          <pre><code>--ts-paragraph-indent: 2em;</code></pre>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

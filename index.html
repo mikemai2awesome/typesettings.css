@@ -9,24 +9,24 @@
   <a href="#content">
     Skip to content
   </a>
-  <div data-typesettings="golden dark">
+  <div data-typesettings="golden">
     <nav>
       <ul>
         <li>
-          <a href="javascript:">
+          <a href="index.html">
             <strong>Typesettings.css</strong>
           </a>
         </li>
         <li>
           <ul>
             <li>
-              <a href="javascript:">Advanced</a>
+              <a href="docs.html">Docs</a>
+            </li>
+            <li>
+              <a href="customize.html">Customize</a>
             </li>
             <li>
               <a href="javascript:">Examples</a>
-            </li>
-            <li>
-              <a href="javascript:">Author</a>
             </li>
             <li>
               <a href="javascript:">Download</a>
@@ -37,15 +37,15 @@
     </nav>
     <main id="content">
       <article>
-        <header>
+        <header role="banner">
           <h1>
-            Darker. Bolder. Stronger.
+            Bigger. Bolder. Stronger.
           </h1>
           <h2>
             &amp; zero colors given!
           </h2>
           <p>
-            Typesettings.css is inspired by traditional graphic design fundamentals and the perfect lightweight <abbr aria-label="Cascading Stylesheet">CSS</abbr> framework for any minimal website or article design. <em>No colors; no Javascript; no classes!</em>
+            Typesettings.css is inspired by traditional graphic design fundamentals &amp; the perfect lightweight <abbr aria-label="Cascading Stylesheet">CSS</abbr> framework for any minimal website or article design. <em>No colors; no Javascript; no classes!</em> In version 2.x, the typography scales bigger, the design goes bolder, &amp; accessibility gets stronger.
           </p>
         </header>
         <section>
@@ -59,9 +59,7 @@
               </p>
               <pre><code>&lt;head&gt;<br>&nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot; href=&quot;[path]/typesettings.css&quot;&gt;<br>&lt;/head&gt;</code></pre>
               <p>
-                <small>
-                  <em>Note: typesettings.css is meant to be used alone, it is not compatible with any other frameworks. Also, basic resets are included, Normalize.css or Sanitize.css is not needed.</em>
-                </small>
+                <em>Note: typesettings.css is meant to be used alone, it is not compatible with any other frameworks. Also, basic resets are included, Normalize.css or Sanitize.css is not needed.</em>
               </p>
             </li>
             <li>
@@ -74,56 +72,10 @@
         </section>
         <section>
           <h3>
-            Modifiers
-          </h3>
-          <p>
-            Modifiers are additional options you can add to the <code>data-typesettings</code> attribute. Mix and match for the desired effects.
-          </p>
-          <h4>
-            Example
-          </h4>
-          <pre><code>&lt;div data-typesettings=&quot;sans-serif indented golden dark&quot;&gt;<br>&nbsp;&nbsp;&hellip;<br>&lt;/div&gt;</code></pre>
-          <ul data-comfortable>
-            <li>
-              <h5>
-                sans-serif
-              </h5>
-              <p>
-                <code>data-typesettings="sans-serif"</code> sets the body text to sans-serif and heading text to serif.
-              </p>
-            </li>
-            <li>
-              <h5>
-                indented
-              </h5>
-              <p>
-                <code>data-typesettings="indented"</code> uses paragraph indents instead of paragraph spacing.
-              </p>
-            </li>
-            <li>
-              <h5>
-                golden
-              </h5>
-              <p>
-                <code>data-typesettings="golden"</code> turns on the golden ratio between article width and white space and sets the optimal character count per line.
-              </p>
-            </li>
-            <li>
-              <h5>
-                dark
-              </h5>
-              <p>
-                <code>data-typesettings="dark"</code> applies a dark theme to the content.
-              </p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h3>
             Enhanced elements
           </h3>
           <p>
-            All of these <abbr aria-label="HyperText Markup Language">HTML</abbr> elements can be used as is inside the <code>data-typesettings</code> element, without any classes. It&rsquo;s that easy!
+            All of these <abbr aria-label="HyperText Markup Language">HTML</abbr> elements can be used inside the <code>div[data-typesettings]</code> element without any classes. It&rsquo;s that easy!
           </p>
           <ul>
             <li>

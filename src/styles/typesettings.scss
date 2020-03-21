@@ -3,7 +3,7 @@
 @import 'tool-breakpoint';
 @import 'tool-palettes';
 @import 'tool-invert';
-@import 'tool-full-bleed';
+@import 'tool-fullbleed';
 @import 'config';
 
 /* ------------------------------------ *\
@@ -114,6 +114,7 @@ body {
   h5,
   h6,
   dt,
+  thead th,
   figcaption,
   blockquote {
     font-family: var(--ts-font-family-sans);
@@ -151,8 +152,8 @@ body {
   h2 {
     line-height: calc(var(--ts-line-height-heading) * 0.8);
     -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
   }
 
   h1 {
@@ -192,7 +193,7 @@ body {
 
         & + p {
           color: var(--ts-color-heading);
-          font-size: var(--ts-font-size-xlarge);
+          font-size: var(--ts-font-size-lede);
         }
       }
     }
@@ -275,7 +276,7 @@ body {
         line-height: var(--ts-line-height-heading);
         text-transform: uppercase;
         font-weight: var(--ts-font-weight-bold);
-        font-size: calc(var(--ts-font-size-large) * 2.5);
+        font-size: calc(var(--ts-font-size-lede) * 2.2);
         border: var(--ts-border);
 
         @at-root [dir=rtl] #{&} {
@@ -296,21 +297,34 @@ body {
   }
 
   p,
+  dl,
+  hr,
   ol,
   ul,
-  dl,
-  aside,
-  header,
+  nav,
   footer,
-  figure,
-  progress,
   details,
-  form,
   fieldset,
-  blockquote,
-  pre,
-  hr {
+  progress,
+  article aside {
     margin-top: var(--ts-paragraph-spacing);
+    -webkit-margin-end: 0;
+            margin-inline-end: 0;
+    margin-bottom: 0;
+    -webkit-margin-start: 0;
+            margin-inline-start: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  blockquote,
+  figure,
+  header,
+  form,
+  pre {
+    margin-top: calc(var(--ts-paragraph-spacing) * 1.25);
     -webkit-margin-end: 0;
             margin-inline-end: 0;
     margin-bottom: 0;
@@ -328,6 +342,7 @@ body {
 
     ul,
     ol {
+      margin-top: 0;
       -webkit-padding-start: var(--ts-paragraph-indent);
               padding-inline-start: var(--ts-paragraph-indent);
     }
@@ -467,10 +482,11 @@ body {
 
     code {
       display: block;
+      max-height: 80vh;
       margin: 0;
       padding: var(--ts-paragraph-spacing) var(--ts-paragraph-indent);
       white-space: inherit;
-      overflow-y: scroll;
+      overflow: auto;
       -webkit-overflow-scrolling: touch;
       border-left: 4px solid var(--ts-color-muted);
     }
@@ -481,7 +497,7 @@ body {
     height: 1px;
     padding: 0;
     border: 0;
-    border-top: 1px solid var(--ts-color-border);
+    border-top: 2px solid var(--ts-color-border);
   }
 
   address {
@@ -681,7 +697,7 @@ body {
     }
   }
 
-  details[open] summary {
+  details[open] > summary {
     margin-bottom: calc(var(--ts-paragraph-spacing) / -2);
 
     &:before {
@@ -713,16 +729,18 @@ body {
   }
 
   th, td {
+    padding-top: calc(var(--ts-paragraph-spacing) / 2);
     -webkit-padding-end: calc(var(--ts-paragraph-indent) / 2);
             padding-inline-end: calc(var(--ts-paragraph-indent) / 2);
-    padding-bottom: 3px;
+    padding-bottom: calc(var(--ts-paragraph-spacing) / 2);
     -webkit-padding-start: calc(var(--ts-paragraph-indent) / 2);
             padding-inline-start: calc(var(--ts-paragraph-indent) / 2);
     text-align: start;
-    border-bottom: 2px solid var(--ts-color-subtle);
+    vertical-align: baseline;
+    border-bottom: 2px solid var(--ts-color-border);
 
-    &:not(:first-child) {
-      text-align: center;
+    &:first-child {
+      white-space: nowrap;
     }
   }
 
@@ -731,19 +749,18 @@ body {
     color: var(--ts-color-heading);
     white-space: nowrap;
     font-weight: var(--ts-font-weight-bold);
+  }
+
+  thead th {
     border-bottom-color: currentColor;
   }
 
-  aside {
+  article aside {
     padding: calc(var(--ts-paragraph-spacing) / 2);
     border: var(--ts-border);
 
     @include respond-to(medium) {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 4em;
       transform: translateY(calc(var(--ts-paragraph-spacing) / 6));
-      z-index: 0;
       float: right;
       width: 10em;
       -webkit-margin-start: var(--ts-paragraph-indent);
@@ -763,7 +780,18 @@ body {
 
   * + section,
   section + hr {
-    margin-top: calc(var(--ts-paragraph-spacing) * 3);
+    margin-top: calc(var(--ts-paragraph-spacing) * 5);
+
+    * + section,
+    section + hr {
+      margin-top: calc(var(--ts-paragraph-spacing) * 3);
+    }
+
+    > *[id]:first-child {
+      /* Offset for navigation height. This only applies if first child is a heading for the section which would have an id. */
+      margin-top: -5rem;
+      padding-top: 5rem;
+    }
   }
 
   header[role=banner] {
@@ -783,10 +811,6 @@ body {
   }
 
   nav {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 99999;
     text-align: center;
 
     @include respond-to(small) {
@@ -796,7 +820,7 @@ body {
 
     ul {
       display: flex;
-      align-items: center;
+      align-items: baseline;
       flex-wrap: wrap;
       list-style: none;
       -webkit-backdrop-filter: blur(0.1em);
@@ -828,7 +852,7 @@ body {
             li:last-child {
               > a {
                 padding: calc(var(--ts-paragraph-spacing) / 2) var(--ts-paragraph-indent);
-                border: 6px solid var(--ts-color-subtle);
+                border: 6px solid var(--ts-color-border);
                 background-color: var(--ts-color-background);
               }
             }
@@ -838,7 +862,7 @@ body {
     }
 
     > ul {
-      @include full-bleed;
+      @include fullbleed;
       justify-content: space-between;
       padding-top: calc(var(--ts-paragraph-spacing) / 2);
       -webkit-padding-end: var(--ts-paragraph-indent);
@@ -868,12 +892,19 @@ body {
     }
   }
 
+  > nav:first-child {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+  }
+
   main {
-    @include full-bleed;
-    padding-top: calc(var(--ts-paragraph-spacing) * 2);
+    @include fullbleed;
+    padding-top: calc(var(--ts-paragraph-spacing) * 3);
     -webkit-padding-end: 10vw;
             padding-inline-end: 10vw;
-    padding-bottom: calc(var(--ts-paragraph-spacing) * 3);
+    padding-bottom: calc(var(--ts-paragraph-spacing) * 4);
     -webkit-padding-start: 10vw;
             padding-inline-start: 10vw;
   }
@@ -965,5 +996,10 @@ body {
         margin: 0 auto;
       }
     }
+  }
+
+  /* Make elements full bleed */
+  [data-fullbleed] {
+    @include fullbleed;
   }
 }

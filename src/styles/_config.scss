@@ -25,8 +25,8 @@
   --ts-font-size-large: 1.2em;
   --ts-font-size-xlarge: 1.4em;
   --ts-font-size-xxlarge: 1.8em;
-  --ts-font-size-lede: --ts-font-size-large;
-  /* Text */
+  --ts-font-size-lede: var(--ts-font-size-xlarge);
+  /* Paragraph */
   --ts-paragraph-spacing: 0.9em;
   --ts-paragraph-indent: 1.5em;
   --ts-line-height-heading: 1.25;
