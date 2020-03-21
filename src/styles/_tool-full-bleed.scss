@@ -1,0 +1,13 @@
+/* Full Bleed Container */
+@mixin full-bleed {
+  position: relative;
+  right: 50%;
+  left: 50%;
+  width: 100vw;
+  margin-top: -0.5px;
+  -webkit-margin-end: -50vw;
+          margin-inline-end: -50vw;
+  margin-bottom: -0.5px;
+  -webkit-margin-start: -50vw;
+          margin-inline-start: -50vw;
+}

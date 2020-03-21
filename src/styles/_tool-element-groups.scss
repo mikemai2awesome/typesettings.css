@@ -1,0 +1,39 @@
+/* All text inputs */
+$text-input-elements-list: 'input[type=text]',
+  'input[type=color]',
+  'input[type=date]',
+  'input[type=datetime-local]',
+  'input[type=email]',
+  'input[type=month]',
+  'input[type=number]',
+  'input[type=password]',
+  'input[type=search]',
+  'input[type=tel]',
+  'input[type=time]',
+  'input[type=url]',
+  'input[type=week]',
+  'textarea';
+
+$unquoted-text-input-elements-list: ();
+
+@each $element in $text-input-elements-list {
+  $unquoted-text-input-elements-list: append($unquoted-text-input-elements-list, unquote($element), comma) !global;
+}
+
+$all-text-input-elements: $unquoted-text-input-elements-list;
+
+
+/* All button elements */
+$button-elements-list: 'button',
+  '[type=button]',
+  '[type=reset]',
+  '[type=submit]',
+  '::-webkit-file-upload-button';
+
+$unquoted-button-elements-list: ();
+
+@each $element in $button-elements-list {
+  $unquoted-button-elements-list: append($unquoted-button-elements-list, unquote($element), comma) !global;
+}
+
+$all-button-elements: $unquoted-button-elements-list;

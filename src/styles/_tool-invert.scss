@@ -1,0 +1,13 @@
+/* Invert Mode */
+@mixin invert-mode {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+
+  img:not([src*='.svg']),
+  video,
+  embed,
+  iframe {
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
+  }
+}

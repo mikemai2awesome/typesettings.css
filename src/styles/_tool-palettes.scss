@@ -1,0 +1,80 @@
+/* Colors */
+$color-white: #f6f6f6;
+$color-black: black;
+$color-yellow: #ffc50b;
+$color-magenta: #ef4987;
+$color-cyan: #1fbded;
+$color-green: #8dc73f;
+$color-purple: #98489d;
+$color-gold: #b8860b;
+$color-orange: #f8981d;
+$color-red: #dc2a2a;
+$color-blue: #3455db;
+
+/* Color palettes */
+$palettes: (
+  blue: (
+    xlight:  mix($color-white, $color-blue, 65%),
+    light:   mix($color-white, $color-blue, 10%),
+    initial: $color-blue,
+    dark:    mix($color-black, $color-blue, 25%),
+    xdark:   mix($color-black, $color-blue, 55%),
+  ),
+  cyan: (
+    light:   mix($color-white, $color-cyan, 25%),
+    initial: $color-cyan,
+    dark:    mix($color-black, $color-cyan, 50%)
+  ),
+  magenta: (
+    light:   mix($color-white, $color-magenta, 25%),
+    initial: $color-magenta,
+    dark:    mix($color-black, $color-magenta, 50%)
+  ),
+  yellow: (
+    light:   mix($color-white, $color-yellow, 25%),
+    initial: $color-yellow,
+    dark:    mix($color-black, $color-yellow, 50%)
+  ),
+  purple: (
+    light:   mix($color-white, $color-purple, 25%),
+    initial: $color-purple,
+    dark:    mix($color-black, $color-purple, 50%)
+  ),
+  green: (
+    light:   mix($color-white, $color-green, 25%),
+    initial: $color-green,
+    dark:    mix($color-black, $color-green, 50%)
+  ),
+  red: (
+    light:   mix($color-white, $color-red, 25%),
+    initial: $color-red,
+    dark:    mix($color-black, $color-red, 50%)
+  ),
+  orange: (
+    light:   mix($color-white, $color-orange, 25%),
+    initial: $color-orange,
+    dark:    mix($color-black, $color-orange, 50%)
+  ),
+  gold: (
+    light:   mix($color-white, $color-gold, 25%),
+    initial: $color-gold,
+    dark:    mix($color-black, $color-gold, 50%)
+  ),
+  gray: (
+    xlight:  darken($color-white, 4%),
+    light:   darken($color-white, 6%),
+    initial: #666,
+    dark:    #464646
+  ),
+  black: (
+    initial: $color-black
+  ),
+  white: (
+    initial: $color-white
+  )
+);
+
+/* Palette function */
+@function palette($color, $tone: 'initial') {
+  @return map-get-deep($palettes, $color, $tone);
+}

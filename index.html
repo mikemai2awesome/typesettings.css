@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>Typesettings.css</title>
+  <!--  Styles  -->
+  <link rel="stylesheet" href="src/styles/typesettings.css">
+</head>
+<body>
+  <div data-typesettings="golden dark">
+    <nav>
+      <ul>
+        <li>
+          <a href="javascript:">
+            <strong>Typesettings.css</strong>
+          </a>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <a href="javascript:">Docs</a>
+            </li>
+            <li>
+              <a href="javascript:">Demos</a>
+            </li>
+            <li>
+              <a href="javascript:">Author</a>
+            </li>
+            <li>
+              <a href="javascript:">Download</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <article>
+        <header>
+          <h1>
+            Darker. Bolder. Stronger.
+          </h1>
+          <h2>
+            &amp; zero colors given!
+          </h2>
+          <p>
+            Typesettings.css is inspired by traditional graphic design fundamentals and the perfect lightweight <abbr aria-label="Cascading Stylesheet">CSS</abbr> framework for any minimal website or article design. <em>No classes required.</em>
+          </p>
+        </header>
+        <section>
+          <h3>
+            How to use
+          </h3>
+          <ol data-comfortable>
+            <li>
+              <p>
+                Include <a href="https://mikemai.net/typesettings/css/typesettings-1.7-min.css" target="_blank">typesettings.css</a> in the <code>&lt;head&gt;</code> section of your <code>HTML</code>:
+              </p>
+              <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;path/typesettings.css&quot;&gt;</code></pre>
+            </li>
+            <li>
+              <p>
+                Add <code>data-typesettings</code> attribute to the direct child element of the <code>&lt;body&gt;</code>:
+              </p>
+              <pre><code>&lt;body&gt;<br>&nbsp;&nbsp;&lt;div data-typesettings&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;&lt;/div&gt;<br>&lt;/body&gt;</code></pre>
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h3>
+            Change log
+          </h3>
+          <ul>
+            <li>
+              <strong>11/10/2017:</strong> Release 1.7, aesthetics fine tuning and <code>small</code> added.
+            </li>
+            <li>
+              <strong>11/09/2017:</strong> Release 1.6, light and dark theming rework.
+            </li>
+            <li>
+              <strong>11/08/2017:</strong> Release 1.5, color contrast update.
+            </li>
+            <li>
+              <strong>10/02/2017:</strong> Release 1.4, heading font-size and font-weight rework.
+            </li>
+            <li>
+              <strong>09/28/2017:</strong> Release 1.3, <code>aside</code> spacing fix, <a href="https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/" target="_blank">UI System Font</a> implementation, and font-size rework.
+            </li>
+            <li>
+              <strong>06/29/2017:</strong> Release 1.2, <code>pre</code> line wrap fix.
+            </li>
+            <li>
+              <strong>02/09/2015:</strong> Release 1.1, various color and spacing fixes.
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>
+            Modifiers
+          </h3>
+          <p>
+            Modifiers are additional options you can add to the <code>data-typesettings</code> attribute.
+          </p>
+          <h4>
+            Example
+          </h4>
+          <pre><code>&lt;div data-typesettings=&quot;sans-serif indented golden dark&quot;&gt;<br>&nbsp;&hellip;&nbsp;<br>&lt;/div&gt;</code></pre>
+          <ul data-comfortable>
+            <li>
+              <h5>
+                sans-serif
+              </h5>
+              <p>
+                <code>data-typesettings="sans-serif"</code> sets the body text to sans-serif and heading text to serif.
+              </p>
+            </li>
+            <li>
+              <h5>
+                indented
+              </h5>
+              <p>
+                <code>data-typesettings="indented"</code> uses paragraph indents instead of paragraph spacing.
+              </p>
+            </li>
+            <li>
+              <h5>
+                golden
+              </h5>
+              <p>
+                <code>data-typesettings="golden"</code> turns on the golden ratio between article width and white space and sets the optimal character count per line.
+              </p>
+            </li>
+            <li>
+              <h5>
+                dark
+              </h5>
+              <p>
+                <code>data-typesettings="dark"</code> applies a dark theme to the article.
+              </p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>
+            Bells &amp; whistles
+          </h3>
+          <h4>
+            Page banner
+          </h4>
+          <p>
+            If you want to enable a page banner (such as the banner on this very page), create a <code>&lt;header&gt;</code> tag with the attribute <code>role=&quot;banner&quot;</code>.
+          </p>
+          <pre><code>&lt;header role=&quot;banner&quot;&gt;<br>&nbsp;&hellip;&nbsp;<br>&lt;/header&gt;</code></pre>
+          <h4>
+            Drop cap
+          </h4>
+          <p>
+            You can activate drop cap by using a <code>&lt;p&gt;</code> inside the page banner.
+          </p>
+          <pre><code>&lt;header role=&quot;banner&quot;&gt;<br>&nbsp;&lt;p&gt;&hellip;&lt;/p&gt;&nbsp;<br>&lt;/header&gt;</code></pre>
+        </section>
+        <section>
+          <h3>
+            Enhanced elements
+          </h3>
+          <ul>
+            <li>
+              <code>p</code>
+            </li>
+            <li>
+              <code>dl</code>
+            </li>
+            <li>
+              <code>ol</code>
+            </li>
+            <li>
+              <code>ul</code>
+            </li>
+            <li>
+              <code>nav</code>
+            </li>
+            <li>
+              <code>aside</code>
+            </li>
+            <li>
+              <code>footer</code>
+            </li>
+            <li>
+              <code>header</code>
+            </li>
+            <li>
+              <code>section</code>
+            </li>
+            <li>
+              <code>h1</code> ~ <code>h6</code>
+            </li>
+            <li>
+              <code>blockquote</code>
+            </li>
+            <li>
+              <code>fieldset</code>
+            </li>
+            <li>
+              <code>details</code>
+            </li>
+            <li>
+              <code>button</code>
+            </li>
+            <li>
+              <code>figure</code>
+            </li>
+            <li>
+              <code>input</code>
+            </li>
+            <li>
+              <code>label</code>
+            </li>
+            <li>
+              <code>small</code>
+            </li>
+            <li>
+              <code>table</code>
+            </li>
+            <li>
+              <code>abbr</code>
+            </li>
+            <li>
+              <code>code</code>
+            </li>
+            <li>
+              <code>form</code>
+            </li>
+            <li>
+              <code>pre</code>
+            </li>
+            <li>
+              <code>hr</code>
+            </li>
+          </ul>
+        </section>
+        <hr>
+        <section>
+          <h3>
+            Kitchen sink
+          </h3>
+          <p>
+            Paragraphs. <strong>Bold</strong>, <em>italic</em>, <a href="javascript:">linked</a>, <abbr aria-label="This is an abbreviation">TIAA</abbr>, <code>code</code>, <small>small</small>.
+          </p>
+          <p>
+            The ultimate measure of a man is not where he stands in moments of comfort and convenience, but where he stands at times of challenge and controversy.
+          </p>
+          <aside>
+            <p>
+              Aside content.
+            </p>
+          </aside>
+          <p>
+            The function of education is to teach one to think intensively and to think critically. Intelligence plus character&mdash;that is the goal of true education.
+          </p>
+          <p>
+            In the end, we will remember not the words of our enemies, but the silence of our friends.
+          </p>
+          <blockquote>
+            <p>
+              <q>
+                Darkness cannot drive out darkness; only <q>light</q> can do that. Hate cannot drive out hate; only <q>love</q> can do that.
+              </q>
+            </p>
+            <p>
+              <q>
+                The time is always right to do what is right.
+              </q>
+            </p>
+          </blockquote>
+          <ul>
+            <li>
+              First level item
+            </li>
+            <li>
+              First level item
+              <ol>
+                <li>
+                  Second level item
+                  <ul>
+                    <li>
+                      Third level item
+                    </li>
+                    <li>
+                      Third level item
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Second level item
+                </li>
+              </ol>
+            </li>
+            <li>
+              First level item
+            </li>
+          </ul>
+          <ol>
+            <li>
+              First level item
+            </li>
+            <li>
+              First level item
+              <ul>
+                <li>
+                  Second level item
+                  <ol>
+                    <li>
+                      Third level item
+                    </li>
+                    <li>
+                      Third level item
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  Second level item
+                </li>
+              </ul>
+            </li>
+            <li>
+              First level item
+            </li>
+          </ol>
+          <h1>
+            H1 heading text
+          </h1>
+          <h2>
+            H2 heading text
+          </h2>
+          <h3>
+            H3 heading text
+          </h3>
+          <h4>
+            H4 heading text
+          </h4>
+          <h5>
+            H5 heading text
+          </h5>
+          <h6>
+            H6 heading text
+          </h6>
+          <details>
+            <summary><h6>H6 summary heading text</h6></summary>
+            <p>This is the full details.</p>
+          </details>
+          <pre><code>pre&nbsp;{<br>&nbsp;&nbsp;padding: .5em 1em; color: black; border-left: 5px solid; background-color: white;<br>}</code></pre>
+          <figure>
+            <img src="https://placehold.it/1600x900" alt="">
+            <figcaption>
+              Figure caption
+            </figcaption>
+          </figure>
+          <figure>
+            <table>
+              <thead>
+                <tr>
+                  <th>Heading</th>
+                  <th width="30">Heading</th>
+                  <th width="30">Heading</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>cell</td>
+                  <td>cell</td>
+                  <td>cell</td>
+                </tr>
+                <tr>
+                  <td>cell</td>
+                  <td>cell</td>
+                  <td>cell</td>
+                </tr>
+              </tbody>
+            </table>
+            <figcaption>Table caption.</figcaption>
+          </figure>
+          <h4>Scripts</h4>
+          <p>This is a super<sup>script</sup>. This is a sub<sub>script</sub>.</p>
+          <h4>Definition List</h4>
+          <dl>
+            <dt>Beast of Bodmin</dt>
+            <dd>A large feline inhabiting Bodmin Moor.</dd>
+            <dt>Morgawr</dt>
+            <dd>A sea serpent.</dd>
+            <dt>Owlman</dt>
+            <dd>A giant owl-like creature.</dd>
+          </dl>
+          <h4>Progress</h4>
+          <progress value="22" max="100"></progress>
+          <h4>Form</h4>
+          <form action="submit">
+            <fieldset>
+              <legend>This is a fieldset</legend>
+              <ol>
+                <li>
+                  <label>
+                    Textarea
+                    <textarea name="textarea" rows="5" placeholder="Enter a paragraph"></textarea>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    Input
+                    <input type="text" placeholder="Enter text">
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    Select
+                    <select name="select" id="select"><optgroup><option value="Select" disabled selected>Select</option><option value="Option 1">Option 1</option></optgroup></select>
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+            <fieldset>
+              <legend>This is another fieldset</legend>
+              <ol>
+                <li>
+                  <label>
+                    <input type="radio" name="radio">
+                    This is a radio input.
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="radio" name="radio">
+                    This is a radio input.
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+            <fieldset>
+              <legend>This is yet another fieldset</legend>
+              <ul>
+                <li>
+                  <label>
+                    <input type="checkbox" name="checkbox">
+                    This is a checkbox input.
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="checkbox">
+                    This is a checkbox input.
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+            <p>
+              <input name="file-upload" type="file">
+            </p>
+            <p>
+              <button>Button</button>
+            </p>
+          </form>
+          <footer>
+            <small>
+              by
+              <address>
+                <a title="Posts by Author Name" href="javascript:">
+                Author Name
+                </a>
+              </address>
+              on
+              <time datetime="2009-11-04">
+              November 4th, 2009
+              </time>
+            </small>
+          </footer>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
