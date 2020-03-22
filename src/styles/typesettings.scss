@@ -869,8 +869,8 @@ body {
       padding-bottom: calc(var(--ts-paragraph-spacing) / 2);
       -webkit-padding-start: var(--ts-paragraph-indent);
               padding-inline-start: var(--ts-paragraph-indent);
-      -webkit-backdrop-filter: blur(0.1em);
-              backdrop-filter: blur(0.1em);
+      -webkit-backdrop-filter: blur(0.15em);
+              backdrop-filter: blur(0.15em);
     }
 
     a {

@@ -7,9 +7,11 @@
   <style>
     @import url('https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Coda:400,800&display=swap');
     :root {
-      --ts-color-heading: mediumblue;
+      --ts-color-heading: darkmagenta;
       --ts-color-body: navy;
-      --ts-color-background: lightcyan;
+      --ts-color-background: cyan;
+      --ts-color-muted: mediumblue;
+      --ts-color-subtle: lightcyan;
       --ts-font-family-serif: 'Bitter', serif;
       --ts-font-family-sans: 'Coda', sans-serif;
       --ts-font-family-sans-alt: 'Coda', sans-serif;
@@ -57,12 +59,12 @@
             Using <abbr aria-label="Cascading Stylesheet">CSS</abbr> custom properties
           </h2>
         </header>
-        <section aria-labelledby="variables">
-          <h3 id="variables">
-            Variables
+        <section aria-labelledby="props">
+          <h3 id="props">
+            Props
           </h3>
           <p>
-            You can easily customize the styles by defining the available <abbr aria-label="Cascading Stylesheet">CSS</abbr> custom properties (variables) in the <code>:root</code>. Your own styles should come after <code>typesettings.css</code>.
+            You can easily customize the styles by defining the available <abbr aria-label="Cascading Stylesheet">CSS</abbr> custom properties (props) in the <code>:root</code>. Your own styles should come after <code>typesettings.css</code>.
           </p>
           <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;[path]/typesettings.css&quot;&gt;<br>&lt;style&gt;<br>&nbsp;&nbsp;:root {<br>&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;}<br>&lt;/style&gt;</code></pre>
         </section>
