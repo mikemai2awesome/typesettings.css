@@ -97,6 +97,7 @@ body {
     }
 
     &:hover,
+    &:visited:hover,
     &:focus {
       color: var(--ts-color-muted);
     }
@@ -823,8 +824,6 @@ body {
       align-items: baseline;
       flex-wrap: wrap;
       list-style: none;
-      -webkit-backdrop-filter: blur(0.1em);
-              backdrop-filter: blur(0.1em);
 
       li {
         flex-grow: 1;
@@ -870,6 +869,8 @@ body {
       padding-bottom: calc(var(--ts-paragraph-spacing) / 2);
       -webkit-padding-start: var(--ts-paragraph-indent);
               padding-inline-start: var(--ts-paragraph-indent);
+      -webkit-backdrop-filter: blur(0.1em);
+              backdrop-filter: blur(0.1em);
     }
 
     a {
@@ -878,16 +879,20 @@ body {
       letter-spacing: 0.05em;
       text-transform: uppercase;
       text-shadow:
-        0 0 1px var(--ts-color-background),
-        -1px -1px 0 var(--ts-color-background),
-        1px 1px 0 var(--ts-color-background),
-        1px -1px 0 var(--ts-color-background),
-        -1px 1px 0 var(--ts-color-background);
+        0 0 0.1em var(--ts-color-background),
+        0.1em 0 0.1em var(--ts-color-background),
+        0 0.1em 0.1em var(--ts-color-background),
+        0 -0.1em 0.1em var(--ts-color-background),
+        -0.1em 0 0.1em var(--ts-color-background);
       font-family: var(--ts-font-family-sans-alt);
       font-size: var(--ts-font-size-xsmall);
 
       @include respond-to(small) {
         padding: 0;
+      }
+
+      &:visited {
+        color: var(--ts-color-link);
       }
     }
   }
@@ -996,10 +1001,5 @@ body {
         margin: 0 auto;
       }
     }
-  }
-
-  /* Make elements full bleed */
-  [data-fullbleed] {
-    @include fullbleed;
   }
 }
