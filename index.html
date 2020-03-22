@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Typesettings.css</title>
-  <link rel="stylesheet" href="src/styles/typesettings.css">
+  <title>Typesettings.css | Minimal CSS Framework</title>
+  <link rel="stylesheet" href="src/styles/typesettings.css" preload>
+  <meta name="description" content="Typesettings.css is inspired by traditional graphic design fundamentals and the perfect lightweight CSS framework for any minimal website or article design.">
 </head>
 <body>
   <a href="#content">
@@ -13,14 +14,16 @@
     <nav>
       <ul>
         <li>
-          <a href="index.html">
-            <strong>Typesettings.css</strong>
-          </a>
+          <h1>
+            <a href="index.html">
+              Typesettings.css
+            </a>
+          </h1>
         </li>
         <li>
           <ul>
             <li>
-              <a href="docs.html">Docs</a>
+              <a href="docs.html" aria-label="Documentation">Docs</a>
             </li>
             <li>
               <a href="customize.html">Customize</a>
@@ -29,7 +32,7 @@
               <a href="showcase.html">Showcase</a>
             </li>
             <li>
-              <a href="javascript:">Download</a>
+              <a href="javascript:" aria-label="Download the Typesettings.css file">Download</a>
             </li>
           </ul>
         </li>
@@ -37,19 +40,19 @@
     </nav>
     <main id="content">
       <article>
-        <header role="banner">
+        <header>
           <h1>
             Bigger. Bolder. Stronger.
           </h1>
           <h2>
-            &amp; zero colors given!
+            <abbr aria-label="Designed">🎨</abbr> <abbr aria-label="and">➕</abbr> <abbr aria-label="built">🔧</abbr> with <abbr aria-label="love">❤️</abbr> by <a href="https://mikemai.net">Mike Mai</a>
           </h2>
           <p>
-            Typesettings.css is inspired by traditional graphic design fundamentals &amp; the perfect lightweight <abbr aria-label="Cascading Stylesheet">CSS</abbr> framework for any minimal website or article design. <em>No colors; no Javascript; no classes!</em> In version 2.x, the typography scales bigger, the design goes bolder, &amp; accessibility gets stronger.
+            Typesettings.css is inspired by traditional graphic design fundamentals &amp; the perfect lightweight <abbr aria-label="Cascading Stylesheet">CSS</abbr> framework for any minimal website or article design. <em>No colors; no Javascript; no classes!</em> In version 2.x, the typography scales bigger, the design goes bolder, &amp; contrast gets stronger.
           </p>
         </header>
-        <section>
-          <h3>
+        <section aria-labelledby="basic-usage">
+          <h3 id="basic-usage">
             Basic Usage
           </h3>
           <ol data-comfortable>
@@ -59,7 +62,7 @@
               </p>
               <pre><code>&lt;head&gt;<br>&nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot; href=&quot;[path]/typesettings.css&quot;&gt;<br>&lt;/head&gt;</code></pre>
               <p>
-                <em>Note: typesettings.css is meant to be used alone, it is not compatible with any other frameworks. Also, basic resets are included, Normalize.css or Sanitize.css is not needed.</em>
+                <abbr aria-label="Note">📣</abbr>: <em>If you are using <code>typesettings.css</code> as is, don&rsquo;t combine it with other frameworks. Also, basic resets are included, there is no need to use Normalize.css or Sanitize.css.</em>
               </p>
             </li>
             <li>
@@ -70,8 +73,8 @@
             </li>
           </ol>
         </section>
-        <section>
-          <h3>
+        <section aria-labelledby="enhanced-elements">
+          <h3 id="enhanced-elements">
             Enhanced elements
           </h3>
           <p>
@@ -152,6 +155,20 @@
             </li>
           </ul>
         </section>
+        <section aria-labelledby="browser-support">
+          <h3 id="browser-support">
+            Browser Support
+          </h3>
+          <p>
+            This framework is built for all browsers but <abbr aria-label="Internet Explorer">IE</abbr>, cuz fuck it.
+          </p>
+        </section>
+        <hr>
+        <footer>
+          <p>
+            <small><abbr aria-label="Note">📣</abbr>: <em>This framework is free. Always. Use it, remix it, but don&rsquo;t sell it.</em></small>
+          </p>
+        </footer>
       </article>
     </main>
   </div>

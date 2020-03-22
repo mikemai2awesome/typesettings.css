@@ -54,14 +54,6 @@ body {
   quotes: '「' '」' '『' '』';
 }
 
-:lang(fr) q {
-  quotes: '« ' ' »';
-}
-
-:lang(de) q {
-  quotes: '»' '«' '\2039' '\203A';
-}
-
 /*------------------------------------*\
   Typesettings
 \*------------------------------------*/
@@ -414,8 +406,7 @@ body {
     border-top: var(--ts-border);
     border-bottom: var(--ts-border);
 
-    > p {
-      max-width: 25ch;
+    p {
       font-size: var(--ts-font-size-large);
 
       @include respond-to(medium) {
@@ -436,34 +427,40 @@ body {
       }
     }
 
-    @at-root :lang(en):not([dir=rtl]) #{&} q {
-      &:before,
-      &:after {
-        position: absolute;
-        z-index: 0;
-      }
-
-      &:before {
-        transform: translateX(-105%);
-
-        @at-root [dir=rtl] #{&} {
-          transform: translateX(105%);
-        }
-      }
-
-      &:after {
-        transform: translateX(5%);
-
-        @at-root [dir=rtl] #{&} {
-          transform: translateX(-5%);
-        }
+    @at-root :lang(en):not([dir=rtl]) #{&} {
+      p {
+        max-width: 30ch;
       }
 
       q {
         &:before,
         &:after {
-          position: static;
-          transform: none;
+          z-index: 0;
+        }
+
+        &:before {
+          position: absolute;
+          transform: translateX(-105%);
+
+          @at-root [dir=rtl] #{&} {
+            transform: translateX(105%);
+          }
+        }
+
+        &:after {
+          transform: translateX(5%);
+
+          @at-root [dir=rtl] #{&} {
+            transform: translateX(-5%);
+          }
+        }
+
+        q {
+          &:before,
+          &:after {
+            position: static;
+            transform: none;
+          }
         }
       }
     }
@@ -475,6 +472,7 @@ body {
     letter-spacing: 0.02em;
     vertical-align: baseline;
     font-size: var(--ts-font-size-small);
+    font-style: normal;
     background-color: var(--ts-color-subtle);
   }
 
@@ -498,7 +496,7 @@ body {
     height: 1px;
     padding: 0;
     border: 0;
-    border-top: 2px solid var(--ts-color-border);
+    border-top: var(--ts-border);
   }
 
   address {
@@ -507,6 +505,10 @@ body {
 
   small {
     font-size: var(--ts-font-size-small);
+  }
+
+  mark {
+    background-color: var(--ts-color-marker);
   }
 
   abbr {
@@ -605,8 +607,9 @@ body {
   }
 
   fieldset {
-    padding: calc(var(--ts-paragraph-spacing) / 2) calc(var(--ts-paragraph-indent) * 1.5) var(--ts-paragraph-spacing) calc(var(--ts-paragraph-indent) * 1.5);
+    padding: calc(var(--ts-paragraph-spacing) / 1.5) calc(var(--ts-paragraph-indent) * 1.5) var(--ts-paragraph-spacing) calc(var(--ts-paragraph-indent) * 1.5);
     border: var(--ts-border);
+    background-color: var(--ts-color-subtle);
   }
 
   legend {
@@ -869,12 +872,24 @@ body {
       padding-bottom: calc(var(--ts-paragraph-spacing) / 2);
       -webkit-padding-start: var(--ts-paragraph-indent);
               padding-inline-start: var(--ts-paragraph-indent);
-      -webkit-backdrop-filter: blur(0.15em);
-              backdrop-filter: blur(0.15em);
+      -webkit-backdrop-filter: blur(0.1em);
+              backdrop-filter: blur(0.1em);
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: var(--ts-color-background);
+        opacity: 0.8;
+      }
     }
 
     a {
-      display: block;
+      display: inline-flex;
       padding: calc(var(--ts-paragraph-spacing) / 2) calc(var(--ts-paragraph-indent) / 2);
       letter-spacing: 0.05em;
       text-transform: uppercase;
@@ -886,6 +901,7 @@ body {
         -0.1em 0 0.1em var(--ts-color-background);
       font-family: var(--ts-font-family-sans-alt);
       font-size: var(--ts-font-size-xsmall);
+      border: none;
 
       @include respond-to(small) {
         padding: 0;
@@ -893,6 +909,16 @@ body {
 
       &:visited {
         color: var(--ts-color-link);
+      }
+    }
+
+    h1 {
+      font-family: var(--ts-font-family-heading);
+      font-size: var(--ts-font-size-small);
+
+      a {
+        font-family: inherit;
+        font-size: inherit;
       }
     }
   }
@@ -912,6 +938,11 @@ body {
     padding-bottom: calc(var(--ts-paragraph-spacing) * 4);
     -webkit-padding-start: 10vw;
             padding-inline-start: 10vw;
+  }
+
+  article {
+    max-width: breakpoint(xlarge);
+    margin: 0 auto;
   }
 
   main,
@@ -998,7 +1029,6 @@ body {
 
       article {
         max-width: 66ch;
-        margin: 0 auto;
       }
     }
   }

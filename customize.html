@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <title>Customize | Typesettings.css</title>
-  <link rel="stylesheet" href="src/styles/typesettings.css">
+  <link rel="stylesheet" href="src/styles/typesettings.css" preload>
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Coda:400,800&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Bungee|Coda:400,800&display=swap');
     :root {
-      --ts-color-heading: darkmagenta;
+      --ts-color-heading: mediumvioletred;
       --ts-color-body: navy;
-      --ts-color-background: cyan;
-      --ts-color-muted: mediumblue;
+      --ts-color-link: mediumblue;
+      --ts-color-background: azure;
+      --ts-color-muted: darkcyan;
       --ts-color-subtle: lightcyan;
-      --ts-font-family-serif: 'Bitter', serif;
-      --ts-font-family-sans: 'Coda', sans-serif;
+      --ts-font-family-sans: 'Bungee', sans-serif;
       --ts-font-family-sans-alt: 'Coda', sans-serif;
       --ts-font-weight-regular: 400;
     }
   </style>
+  <meta name="description" content="Cusztomizing Typesettings.css with data attributes and CSS custom properties.">
 </head>
 <body>
   <a href="#content">
@@ -27,23 +28,14 @@
     <nav>
       <ul>
         <li>
-          <a href="index.html">
-            <strong>Typesettings.css</strong>
-          </a>
+          <h1>
+            <a href="index.html">Typesettings.css</a> &raquo; <a href="customize.html" aria-current="page">Customize</a>
+          </h1>
         </li>
         <li>
           <ul>
             <li>
-              <a href="docs.html">Docs</a>
-            </li>
-            <li>
-              <a href="customize.html">Customize</a>
-            </li>
-            <li>
-              <a href="showcase.html">Showcase</a>
-            </li>
-            <li>
-              <a href="javascript:">Download</a>
+              <a href="javascript:" aria-label="Download the Typesettings.css file">Download</a>
             </li>
           </ul>
         </li>
@@ -56,9 +48,47 @@
             Easy Customization
           </h1>
           <h2>
-            Using <abbr aria-label="Cascading Stylesheet">CSS</abbr> custom properties
+            Data attribute &amp; <abbr aria-label="Cascading Stylesheet">CSS</abbr> custom properties
           </h2>
         </header>
+        <section aria-labelledby="data-typesettings">
+          <h3 id="data-typesettings">
+            data-typesettings
+          </h3>
+          <p>
+            There are various values you can pass to the <code>data-typesettings</code> attribute. Mix and match for the desired design effects.
+          </p>
+          <pre><code>&lt;div data-typesettings=&quot;sans-serif indented golden dark&quot;&gt;<br>&nbsp;&nbsp;&hellip;<br>&lt;/div&gt;</code></pre>
+          <figure>
+            <table>
+              <thead>
+                <tr>
+                  <th>Modifier</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>sans-serif</th>
+                  <td>Sets the body text to sans-serif and heading text to serif.</td>
+                </tr>
+                <tr>
+                  <th>indented</th>
+                  <td>Uses paragraph indents instead of paragraph spacing.</td>
+                </tr>
+                <tr>
+                  <th>golden</th>
+                  <td>Turns on the golden ratio between article width and white space and sets the optimal character count per line.</td>
+                </tr>
+                <tr>
+                  <th>dark</th>
+                  <td>Applies a dark theme to the content.</td>
+                </tr>
+              </tbody>
+            </table>
+          </figure>
+        </section>
+        <hr>
         <section aria-labelledby="props">
           <h3 id="props">
             Props
@@ -67,39 +97,45 @@
             You can easily customize the styles by defining the available <abbr aria-label="Cascading Stylesheet">CSS</abbr> custom properties (props) in the <code>:root</code>. Your own styles should come after <code>typesettings.css</code>.
           </p>
           <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;[path]/typesettings.css&quot;&gt;<br>&lt;style&gt;<br>&nbsp;&nbsp;:root {<br>&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;}<br>&lt;/style&gt;</code></pre>
-        </section>
-        <hr>
-        <section aria-labelledby="colors">
-          <h3 id="colors">
-            Colors
-          </h3>
-          <pre><code>:root {<br>&nbsp;&nbsp;--ts-color-body: [custom value];<br>&nbsp;&nbsp;--ts-color-heading: [custom value];<br>&nbsp;&nbsp;--ts-color-link: [custom value];<br>&nbsp;&nbsp;--ts-color-background: [custom value];<br>&nbsp;&nbsp;--ts-color-border: [custom value];<br>}</code></pre>
-          <h5>Example</h5>
-          <pre><code>--ts-color-link: #0000ff;</code></pre>
-        </section>
-        <section aria-labelledby="font-family">
-          <h3 id="font-family">
-            Font-Family
-          </h3>
-          <pre><code>:root {<br>&nbsp;&nbsp;--ts-font-family-serif: [custom value];<br>&nbsp;&nbsp;--ts-font-family-sans: [custom value];<br>&nbsp;&nbsp;--ts-font-family-sans-alt: [custom value];<br>&nbsp;&nbsp;--ts-font-family-monospace: [custom value];<br>}</code></pre>
-          <h5>Example</h5>
-          <pre><code>--ts-font-family-sans: 'Open Sans', sans-serif;</code></pre>
-        </section>
-        <section aria-labelledby="font-weight">
-          <h3 id="font-weight">
-            Font-Weight
-          </h3>
-          <pre><code>:root {<br>&nbsp;&nbsp;--ts-font-weight-regular: [custom value];<br>&nbsp;&nbsp;--ts-font-weight-bold: [custom value];<br>}</code></pre>
-          <h5>Example</h5>
-          <pre><code>--ts-font-weight-bold: 600;</code></pre>
-        </section>
-        <section aria-labelledby="paragraph">
-          <h3 id="paragraph">
-            Paragraph
-          </h3>
-          <pre><code>:root {<br>&nbsp;&nbsp;--ts-paragraph-spacing: [custom value];<br>&nbsp;&nbsp;--ts-paragraph-indent: [custom value];<br>}</code></pre>
-          <h5>Example</h5>
-          <pre><code>--ts-paragraph-indent: 2em;</code></pre>
+          <section aria-labelledby="color">
+            <h4 id="color">
+              Color
+            </h4>
+            <pre><code>:root {<br>&nbsp;&nbsp;--ts-color-body: [custom value];<br>&nbsp;&nbsp;--ts-color-heading: [custom value];<br>&nbsp;&nbsp;--ts-color-link: [custom value];<br>&nbsp;&nbsp;--ts-color-background: [custom value];<br>&nbsp;&nbsp;--ts-color-border: [custom value];<br>}</code></pre>
+            <p>
+              Example: <code>--ts-color-link: #0000ff;</code>
+            </p>
+            <p>
+              <abbr aria-label="Note">📣</abbr>: <em>customize these colors in the context of light mode, because dark mode will invert all of them.</em>
+            </p>
+          </section>
+          <section aria-labelledby="font-family">
+            <h4 id="font-family">
+              Font-Family
+            </h4>
+            <pre><code>:root {<br>&nbsp;&nbsp;--ts-font-family-serif: [custom value];<br>&nbsp;&nbsp;--ts-font-family-sans: [custom value];<br>&nbsp;&nbsp;--ts-font-family-sans-alt: [custom value];<br>&nbsp;&nbsp;--ts-font-family-monospace: [custom value];<br>}</code></pre>
+            <p>
+              Example: <code>--ts-font-family-sans: 'Open Sans', sans-serif;</code>
+            </p>
+          </section>
+          <section aria-labelledby="font-weight">
+            <h4 id="font-weight">
+              Font-Weight
+            </h4>
+            <pre><code>:root {<br>&nbsp;&nbsp;--ts-font-weight-regular: [custom value];<br>&nbsp;&nbsp;--ts-font-weight-bold: [custom value];<br>}</code></pre>
+            <p>
+              Example: <code>--ts-font-weight-bold: 600;</code>
+            </p>
+          </section>
+          <section aria-labelledby="paragraph">
+            <h4 id="paragraph">
+              Paragraph
+            </h4>
+            <pre><code>:root {<br>&nbsp;&nbsp;--ts-paragraph-spacing: [custom value];<br>&nbsp;&nbsp;--ts-paragraph-indent: [custom value];<br>}</code></pre>
+            <p>
+              Example: <code>--ts-paragraph-indent: 2em;</code>
+            </p>
+          </section>
         </section>
       </article>
     </main>

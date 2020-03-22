@@ -6,9 +6,10 @@
   /* Color */
   --ts-color-body: #{palette(gray, dark)};
   --ts-color-heading: #{palette(black)};
-  --ts-color-link: #{palette(black)};
+  --ts-color-link: var(--ts-color-heading);
   --ts-color-background: #{palette(white)};
   --ts-color-border: #{palette(gray, light)};
+  --ts-color-marker: #{palette(yellow)};
   --ts-color-muted: #{palette(gray)};
   --ts-color-subtle: #{palette(gray, xlight)};
   /* Font */

@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <title>PT Sans and PT Serif | Typesettings.css</title>
-  <link rel="stylesheet" href="src/styles/typesettings.css">
-  <style contenteditable>
+  <link rel="stylesheet" href="src/styles/typesettings.css" preload>
+  <style>
     @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700|PT+Sans:400,700|PT+Serif:400,400i,700,700i&display=swap');
     :root {
-      --ts-color-heading: #003144;
-      --ts-color-body: #457DA5;
-      --ts-color-background: white;
-      --ts-color-muted: #82AC00;
+      --ts-color-heading: midnightblue;
+      --ts-color-background: honeydew;
       --ts-font-family-serif: 'PT Serif', serif;
       --ts-font-family-sans: 'PT Sans Narrow', sans-serif;
       --ts-font-family-sans-alt: 'PT Sans', sans-serif;
@@ -18,32 +16,24 @@
       --ts-font-weight-bold: 700;
     }
   </style>
+  <meta name="description" content="Example article with custom fonts and colors.">
 </head>
 <body>
   <a href="#content">
     Skip to content
   </a>
-  <div data-typesettings>
+  <div data-typesettings="indented dark">
     <nav>
       <ul>
         <li>
-          <a href="index.html">
-            <strong>Typesettings.css</strong>
-          </a>
+          <h1>
+            <a href="index.html">Typesettings.css</a> &raquo; <a href="showcase.html">Showcase</a>
+          </h1>
         </li>
         <li>
           <ul>
             <li>
-              <a href="docs.html">Docs</a>
-            </li>
-            <li>
-              <a href="customize.html">Customize</a>
-            </li>
-            <li>
-              <a href="showcase.html">Showcase</a>
-            </li>
-            <li>
-              <a href="javascript:">Download</a>
+              <a href="javascript:" aria-label="Download the Typesettings.css file">Download</a>
             </li>
           </ul>
         </li>
@@ -95,8 +85,8 @@
           </p>
         </section>
         <section>
-          <h3>Props</h3>
-          <pre><code>@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700|PT+Sans:400,700|PT+Serif:400,400i,700,700i&display=swap');<br><br>--ts-color-heading: #003144;<br>--ts-color-body: #457DA5;<br>--ts-color-background: white;<br>--ts-color-muted: #82AC00;<br>--ts-font-family-serif: 'PT Serif', serif;<br>--ts-font-family-sans: 'PT Sans Narrow', sans-serif;<br>--ts-font-family-sans-alt: 'PT Sans', sans-serif;<br>--ts-font-weight-regular: 400;<br>--ts-font-weight-bold: 700;</code></pre>
+          <h3>Customization</h3>
+          <pre><code>@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700|PT+Sans:400,700|PT+Serif:400,400i,700,700i&display=swap');<br><br>--ts-color-heading: midnightblue;<br>--ts-color-background: honeydew;<br>--ts-font-family-serif: 'PT Serif', serif;<br>--ts-font-family-sans: 'PT Sans Narrow', sans-serif;<br>--ts-font-family-sans-alt: 'PT Sans', sans-serif;<br>--ts-font-weight-regular: 400;<br>--ts-font-weight-bold: 700;</code></pre>
         </section>
       </article>
     </main>
