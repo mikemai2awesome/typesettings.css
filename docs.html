@@ -73,6 +73,9 @@
             Create a skip link for the page by using an <code>&lt;a&gt;</code> element as the direct child of the <code>&lt;body&gt;</code>. Use the same text in the <code>href</code> attribute as the <code>id</code> for the content container.
           </p>
           <pre><code>&lt;body&gt;<br>&nbsp;&nbsp;&lt;a href="#content"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;Skip to content<br>&nbsp;&nbsp;&lt;/a&gt;<br>&lt;/body&gt;</code></pre>
+          <p>
+            <abbr aria-label="Note">📣</abbr>: <em>Accessibility is important and everyone should write better code to support it. Please reference the <abbr aria-label="Web Content Accessibility Guidelines">WCAG</abbr> for <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">writing proper markup</a>.</em>
+          </p>
         </section>
         <hr>
         <section aria-labelledby="internationalization">
@@ -80,29 +83,46 @@
             Internationalization
           </h3>
           <p>
-            Proper quotation marks for English, Japanese, and Chinese (Traditional) are built-in for the <code>&lt;q&gt;</code> element.
+            Typesettings.css has basic internationalization support for all elements.
           </p>
-          <ul>
-            <li>
-              <p>
-                <q>Primary quotation marks and <q>secondary quotation marks</q>.</q>
-              </p>
-            </li>
-            <li>
-              <p lang="zh-Hant">
-                <q>引号，标示引用、着重、<q>特别用意</q>的符号。 </q>
-              </p>
-            </li>
-            <li>
-              <p lang="ja">
-                <q>引用符（いんようふ）は、<q>約物の</q>一つ。</q>
-              </p>
-            </li>
-          </ul>
-          <pre><code>&lt;q&gt;<br>&nbsp;&nbsp;Primary quotation marks and &lt;q&gt;secondary quotation marks&lt;/q&gt;.<br>&lt;/q&gt;</code></pre>
-          <p>
-            <abbr aria-label="Note">📣</abbr>: <em>Want more languages supported? <a href="https://github.com/mikemai2awesome/typesettings.css/issues">Submit a request here &raquo;</a></em>
-          </p>
+          <section aria-labelledby="quotation-marks">
+            <h4 id="quotation-marks">
+              Quotation Marks
+            </h4>
+            <p>
+              Proper quotation marks for English, Japanese, and Chinese (Traditional) are built-in for the <code>&lt;q&gt;</code> element.
+            </p>
+            <ul>
+              <li>
+                <p>
+                  <q>Primary quotation marks and <q>secondary quotation marks</q>.</q>
+                </p>
+              </li>
+              <li>
+                <p lang="zh-Hant">
+                  <q>引号，标示引用、着重、<q>特别用意</q>的符号。 </q>
+                </p>
+              </li>
+              <li>
+                <p lang="ja">
+                  <q>引用符（いんようふ）は、<q>約物の</q>一つ。</q>
+                </p>
+              </li>
+            </ul>
+            <pre><code>&lt;q&gt;<br>&nbsp;&nbsp;Primary quotation marks and &lt;q&gt;secondary quotation marks&lt;/q&gt;.<br>&lt;/q&gt;</code></pre>
+            <p>
+              <abbr aria-label="Note">📣</abbr>: <em>Want more languages supported? <a href="https://github.com/mikemai2awesome/typesettings.css/issues">Submit a request here &raquo;</a></em>
+            </p>
+          </section>
+          <section aria-labelledby="rtl">
+            <h4 id="rtl">
+              Right to Left
+            </h4>
+            <p>
+              Right to left writing mode is supported in all elements. To create a page that reads right to left, add the <code>dir="rtl"</code> attribute to the <code>&lt;html&gt;</code> element.
+            </p>
+            <pre><code>&lt;html dir="rtl"&gt;<br>&nbsp;&nbsp;&hellip;<br>&lt;/html&gt;</code></pre>
+          </section>
         </section>
         <hr>
         <section aria-labelledby="page-structure">
