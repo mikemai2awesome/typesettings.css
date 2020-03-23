@@ -26,12 +26,12 @@
   --ts-font-size-large: 1.2em;
   --ts-font-size-xlarge: 1.4em;
   --ts-font-size-xxlarge: 1.8em;
-  --ts-font-size-lede: var(--ts-font-size-xlarge);
+  --ts-font-size-lede: var(--ts-font-size-large);
   /* Paragraph */
   --ts-paragraph-spacing: 0.9em;
   --ts-paragraph-indent: 1.5em;
-  --ts-line-height-heading: 1.25;
-  --ts-line-height-body: 1.5;
+  --ts-line-height-heading: 1.45;
+  --ts-line-height-body: 1.55;
   /* Misc */
   --ts-border: 6px double var(--ts-color-border);
 }

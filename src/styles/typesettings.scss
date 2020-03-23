@@ -187,6 +187,14 @@ body {
         & + p {
           color: var(--ts-color-heading);
           font-size: var(--ts-font-size-lede);
+
+          @include respond-to(medium) {
+            font-size: calc(var(--ts-font-size-lede) * 1.1);
+          }
+
+          @include respond-to(large) {
+            font-size: calc(var(--ts-font-size-lede) * 1.2);
+          }
         }
       }
     }
@@ -266,7 +274,7 @@ body {
         -webkit-margin-end: 0.15em;
                 margin-inline-end: 0.15em;
         padding: 0 0.2em;
-        line-height: var(--ts-line-height-heading);
+        line-height: calc(var(--ts-line-height-body) * 0.95);
         text-transform: uppercase;
         font-weight: var(--ts-font-weight-bold);
         font-size: calc(var(--ts-font-size-lede) * 2.2);
@@ -630,7 +638,7 @@ body {
   }
 
   fieldset {
-    padding: calc(var(--ts-paragraph-spacing) / 1.5) calc(var(--ts-paragraph-indent) * 1.5) var(--ts-paragraph-spacing) calc(var(--ts-paragraph-indent) * 1.5);
+    padding: var(--ts-paragraph-spacing) calc(var(--ts-paragraph-indent) * 1.5) var(--ts-paragraph-spacing) calc(var(--ts-paragraph-indent) * 1.5);
     border: var(--ts-border);
     background-color: var(--ts-color-subtle);
   }
@@ -638,7 +646,8 @@ body {
   legend {
     display: table;
     max-width: 100%;
-    padding: 0;
+    margin: 0 -3px;
+    padding: 1px 3px;
     color: inherit;
     white-space: normal;
     line-height: 1;
