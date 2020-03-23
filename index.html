@@ -7,7 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3">
   <meta http-equiv="cleartype" content="on">
   <title>Typesettings.css | Minimal CSS Framework</title>
-  <link rel="stylesheet" href="src/styles/typesettings.css" preload>
+  <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="src/styles/typesettings.css">
+  <noscript>
+    <link rel="stylesheet" onload="this.rel = 'stylesheet'" href="src/styles/typesettings.css">
+  </noscript>
   <meta name="description" content="Typesettings.css is inspired by traditional graphic design fundamentals and the perfect lightweight CSS framework for any minimal website or article design.">
 </head>
 <body>
@@ -179,5 +182,10 @@
       </article>
     </main>
   </div>
+  <script>
+    window.onload = function () {
+      console.log('Loaded')
+    }
+  </script>
 </body>
 </html>
