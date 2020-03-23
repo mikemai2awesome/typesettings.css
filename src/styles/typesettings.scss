@@ -547,6 +547,9 @@ body {
       padding: 0.2em 0.4em;
       color: var(--ts-color-background);
       line-height: var(--ts-line-height-heading);
+      -webkit-hyphens: none;
+          -ms-hyphens: none;
+              hyphens: none;
       font-family: var(--ts-font-family-sans-alt);
       font-size: var(--ts-font-size-xsmall);
       border: 2px solid var(--ts-color-background);
