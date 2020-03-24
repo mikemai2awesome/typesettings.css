@@ -849,7 +849,7 @@ body {
   nav {
     text-align: center;
 
-    @include respond-to(small) {
+    @include respond-to(medium) {
       text-align: start;
       line-height: var(--ts-line-height-heading);
     }
@@ -865,12 +865,10 @@ body {
         margin-top: 0;
         -webkit-margin-end: 0;
                 margin-inline-end: 0;
-        @include respond-to(small) {
+
+        @include respond-to(medium) {
           -webkit-margin-end: calc(var(--ts-paragraph-indent) / 2);
                   margin-inline-end: calc(var(--ts-paragraph-indent) / 2);
-        }
-
-        @include respond-to(small) {
           flex-grow: 0;
         }
 
@@ -882,7 +880,9 @@ body {
         ul {
           padding: 0;
 
-          @include respond-to(small) {
+          @include respond-to(medium) {
+            justify-content: flex-end;
+
             li:last-child {
               > a {
                 padding: calc(var(--ts-paragraph-spacing) / 2) var(--ts-paragraph-indent);
@@ -897,6 +897,7 @@ body {
 
     > ul {
       @include fullbleed;
+      flex-direction: column;
       justify-content: space-between;
       padding-top: calc(var(--ts-paragraph-spacing) / 2);
       -webkit-padding-end: var(--ts-paragraph-indent);
@@ -918,6 +919,22 @@ body {
         background-color: var(--ts-color-background);
         opacity: 0.8;
       }
+
+      @include respond-to(medium) {
+        flex-direction: row;
+      }
+
+      > li {
+        width: 100%;
+
+        @include respond-to(medium) {
+          width: auto;
+
+          &:nth-child(2) {
+            flex-grow: 1;
+          }
+        }
+      }
     }
 
     a {
@@ -935,7 +952,7 @@ body {
       font-size: var(--ts-font-size-xsmall);
       border: none;
 
-      @include respond-to(small) {
+      @include respond-to(medium) {
         padding: 0;
       }
 
