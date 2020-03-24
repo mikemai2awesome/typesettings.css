@@ -499,12 +499,24 @@ body {
     }
   }
 
-  code {
+  hr {
+    display: block;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    border-top: var(--ts-border);
+  }
+
+  code,
+  kbd {
     padding: 0.2em 0.4em;
+    font-size: var(--ts-font-size-small);
+  }
+
+  code {
     color: var(--ts-color-heading);
     letter-spacing: 0.02em;
     vertical-align: baseline;
-    font-size: var(--ts-font-size-small);
     font-style: normal;
     background-color: var(--ts-color-subtle);
   }
@@ -524,14 +536,6 @@ body {
     }
   }
 
-  hr {
-    display: block;
-    height: 1px;
-    padding: 0;
-    border: 0;
-    border-top: var(--ts-border);
-  }
-
   address {
     display: inline-block;
   }
@@ -540,8 +544,11 @@ body {
     font-size: var(--ts-font-size-small);
   }
 
-  mark {
-    background-color: var(--ts-color-marker);
+  kbd {
+    color: var(--ts-color-heading);
+    border-radius: 3px;
+    background-color: var(--ts-color-background);
+    box-shadow: 0 1px 1px 1px var(--ts-color-muted);
   }
 
   abbr {
