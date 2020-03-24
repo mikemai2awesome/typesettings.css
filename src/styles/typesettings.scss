@@ -164,14 +164,11 @@ body {
     }
 
     &:first-child {
-      text-align: center;
-
-      & + h2 {
+      & ~ h2:first-of-type {
         margin-bottom: 0;
         color: var(--ts-color-muted);
         letter-spacing: 0.06em;
         text-transform: uppercase;
-        text-align: center;
         font-family: var(--ts-font-family-sans-alt);
         font-weight: var(--ts-font-weight-regular);
         font-size: var(--ts-font-size-xsmall);
@@ -183,20 +180,28 @@ body {
         @include respond-to(large) {
           font-size: calc(var(--ts-font-size-xsmall) * 1.29);
         }
+      }
 
-        & + p {
-          color: var(--ts-color-heading);
-          font-size: var(--ts-font-size-lede);
+      & ~ p:first-of-type {
+        color: var(--ts-color-heading);
+        font-size: var(--ts-font-size-lede);
 
-          @include respond-to(medium) {
-            font-size: calc(var(--ts-font-size-lede) * 1.1);
-          }
+        @include respond-to(medium) {
+          font-size: calc(var(--ts-font-size-lede) * 1.1);
+        }
 
-          @include respond-to(large) {
-            font-size: calc(var(--ts-font-size-lede) * 1.2);
-          }
+        @include respond-to(large) {
+          font-size: calc(var(--ts-font-size-lede) * 1.2);
         }
       }
+    }
+  }
+
+  header h1:first-child {
+    text-align: center;
+
+    & + h2 {
+      text-align: center;
     }
   }
 
@@ -717,14 +722,14 @@ body {
       position: absolute;
       top: 50%;
       left: 0;
-      transform: translate3d(calc(-100% - var(--ts-paragraph-indent) / 2), -50%, 0) rotate(90deg);
+      transform: translate3d(calc(-100% - var(--ts-paragraph-indent) / 2), -50%, 0) rotate(0deg);
       color: var(--ts-color-muted);
       font-size: 0.8em;
 
       @at-root [dir=rtl] #{&} {
         right: 0;
         left: auto;
-        transform: translate3d(calc(100% + var(--ts-paragraph-indent) / 2), -50%, 0) rotate(90deg);
+        transform: translate3d(calc(100% + var(--ts-paragraph-indent) / 2), -50%, 0) rotate(0deg);
       }
     }
 
@@ -737,7 +742,7 @@ body {
     margin-bottom: calc(var(--ts-paragraph-spacing) / -2);
 
     &:before {
-      transform: translate3d(calc(-100% - var(--ts-paragraph-indent) / 2), -50%, 0) rotate(270deg);
+      transform: translate3d(calc(-100% - var(--ts-paragraph-indent) / 2), -50%, 0) rotate(90deg);
 
       @at-root [dir=rtl] #{&} {
         transform: translate3d(calc(100% + var(--ts-paragraph-indent) / 2), -50%, 0) rotate(270deg);
