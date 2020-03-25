@@ -47,6 +47,7 @@ All of these HTML elements can be used inside the `div[data-typesettings]` eleme
 * abbr
 * code
 * form
+* kbd
 * pre
 * hr
 
