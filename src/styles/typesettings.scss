@@ -78,7 +78,7 @@ body {
 
   a {
     text-decoration: none;
-    border-bottom: var(--ts-border);
+    border-bottom: 2px solid var(--ts-color-border);
 
     &:link {
       color: var(--ts-color-link);
@@ -555,7 +555,7 @@ body {
     position: relative;
     color: var(--ts-color-heading);
     cursor: help;
-    border-bottom: 1px dotted;
+    border-bottom: 2px dotted;
 
     &:after {
       content: attr(aria-label);
