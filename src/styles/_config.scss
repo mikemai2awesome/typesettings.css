@@ -32,5 +32,7 @@
   --ts-line-height-heading: 1.45;
   --ts-line-height-body: 1.55;
   /* Misc */
-  --ts-border: 6px double var(--ts-color-border);
+  --ts-border-double: 6px double var(--ts-color-border);
+  --ts-border-single: 2px solid var(--ts-color-border);
+  --ts-border: var(--ts-border-double);
 }
