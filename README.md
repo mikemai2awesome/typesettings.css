@@ -1,5 +1,5 @@
 # Typesettings.css
-Typesettings.css is inspired by traditional graphic design fundamentals and the perfect lightweight CSS framework for any minimal website or article design. No colors; no Javascript; no classes!
+Typesettings.css is inspired by traditional graphic design fundamentals & the perfect lite design systems for any minimal website or article design. No colors; no Javascript; no classes required! In version 2.x, the typography scales bigger, the design goes bolder, & contrast gets stronger.
 
 ## Basic Usage
 ### 1. Include typesettings.css in the HTML file's `<head>` section:
@@ -53,3 +53,6 @@ All of these HTML elements can be used inside the `div[data-typesettings]` eleme
 
 ## Browser Support
 This framework is built for all browsers but IE, cuz fuck it.
+
+## Language Support
+Japanese, Chinese (Traditional), and English.
