@@ -1119,10 +1119,10 @@ body {
             padding-block-start: calc(var(--ts-paragraph-spacing) * 3);
     -webkit-padding-after: calc(var(--ts-paragraph-spacing) * 4);
             padding-block-end: calc(var(--ts-paragraph-spacing) * 4);
-    -webkit-padding-start: 10vw;
-            padding-inline-start: 10vw;
-    -webkit-padding-end: 10vw;
-            padding-inline-end: 10vw;
+    -webkit-padding-start: 10%;
+            padding-inline-start: 10%;
+    -webkit-padding-end: 10%;
+            padding-inline-end: 10%;
   }
 
   article {
@@ -1217,10 +1217,10 @@ body {
   &[data-typesettings*=golden] {
     @include respond-to(medium) {
       main {
-        -webkit-padding-start: 19vw;
-                padding-inline-start: 19vw;
-        -webkit-padding-end: 19vw;
-                padding-inline-end: 19vw;
+        -webkit-padding-start: 19%;
+                padding-inline-start: 19%;
+        -webkit-padding-end: 19%;
+                padding-inline-end: 19%;
       }
 
       article {
@@ -1249,6 +1249,14 @@ body {
       border-left: var(--ts-border-single);
     }
 
+    header h1:first-child {
+      text-align: justify;
+
+      & + h2 {
+        text-align: justify;
+      }
+    }
+
     dd {
       border-top: var(--ts-border);
       border-right: 0;
@@ -1259,7 +1267,7 @@ body {
       code {
         max-width:50vw;
         min-width:320px;
-        height: 100%;
+        max-height: 100%;
       }
     }
 
@@ -1270,9 +1278,28 @@ body {
       }
     }
 
+    main {
+      -webkit-padding-start: calc(var(--ts-paragraph-indent) * 2);
+              padding-inline-start: calc(var(--ts-paragraph-indent) * 2);
+      -webkit-padding-end: calc(var(--ts-paragraph-indent) * 2);
+              padding-inline-end: calc(var(--ts-paragraph-indent) * 2);
+    }
+
     article {
-      max-width: auto;
-      max-height: 66ch;
+      max-width: 100%;
+      max-height: 66em;
+      -webkit-margin-start: 0;
+              margin-inline-start: 0;
+      -webkit-margin-end: 0;
+              margin-inline-end: 0;
+    }
+
+    &[data-typesettings*=golden] {
+      @include respond-to(medium) {
+        article {
+          max-height: 66ch;
+        }
+      }
     }
 
     aside {
@@ -1284,12 +1311,31 @@ body {
 
     nav {
       height: 100vh;
+      text-align: justify;
 
       @include respond-to(medium) {
-        text-align: center;
+        text-align: justify;
+      }
+
+      ul {
+        li {
+          -webkit-margin-end: calc(var(--ts-paragraph-indent) / 2);
+                  margin-inline-end: calc(var(--ts-paragraph-indent) / 2);
+          flex-grow: 0;
+
+          &:last-child{
+            -webkit-margin-end: 0;
+                    margin-inline-end: 0;
+          }
+
+          ul {
+            justify-content: flex-end;
+          }
+        }
       }
 
       > ul {
+        flex-direction: row;
         right: auto;
         left: auto;
         width: auto;
@@ -1297,6 +1343,14 @@ body {
                 margin-inline-end: 0;
         -webkit-margin-start: 0;
                 margin-inline-start: 0;
+
+        > li {
+          width: auto;
+
+          &:nth-child(2) {
+            flex-grow: 1;
+          }
+        }
       }
     }
 
