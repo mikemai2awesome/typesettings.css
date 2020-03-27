@@ -548,11 +548,6 @@ body {
             padding-inline-start: 0.4em;
     -webkit-padding-end: 0.4em;
             padding-inline-end: 0.4em;
-    -webkit-writing-mode:horizontal-tb;
-        -ms-writing-mode:lr-tb;
-            writing-mode:horizontal-tb;
-    -webkit-text-orientation:mixed;
-            text-orientation:mixed;
     font-family: var(--ts-font-family-monospace);
     font-size: var(--ts-font-size-small);
   }
@@ -584,6 +579,11 @@ body {
       -webkit-overflow-scrolling: touch;
       text-align: left;
       white-space: inherit;
+      -webkit-writing-mode:horizontal-tb;
+          -ms-writing-mode:lr-tb;
+              writing-mode:horizontal-tb;
+      -webkit-text-orientation:mixed;
+              text-orientation:mixed;
       border-left: 4px solid var(--ts-color-muted);
     }
   }
@@ -1232,18 +1232,43 @@ body {
   &[data-typesettings*=vertical-rl] {
     --ts-paragraph-indent: 2em;
 
+    width: 100vw;
+    height: 100vh;
     min-height: auto;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: justify;
     -webkit-writing-mode: vertical-rl;
         -ms-writing-mode: tb-rl;
             writing-mode: vertical-rl;
     -webkit-text-orientation: upright;
             text-orientation: upright;
-    text-align: justify;
 
-      width: 100vw;
-      height: 100vh;
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
+    a {
+      border-bottom: 0;
+      border-left: var(--ts-border-single);
+    }
+
+    dd {
+      border-top: var(--ts-border);
+      border-right: 0;
+      border-left: 0;
+    }
+
+    pre {
+      code {
+        max-width:50vw;
+        min-width:320px;
+        height: 100%;
+      }
+    }
+
+    figure {
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
 
     article {
       max-width: auto;
@@ -1257,19 +1282,13 @@ body {
               margin-inline-start: 0;
     }
 
-    a {
-      border-bottom: 0;
-      border-left: var(--ts-border-single);
-    }
-
-    pre {
-      code {
-        max-width:50vw;
-        min-width:320px;
-      }
-    }
-
     nav {
+      height: 100vh;
+
+      @include respond-to(medium) {
+        text-align: center;
+      }
+
       > ul {
         right: auto;
         left: auto;
@@ -1278,7 +1297,6 @@ body {
                 margin-inline-end: 0;
         -webkit-margin-start: 0;
                 margin-inline-start: 0;
-        text-align: center;
       }
     }
 
@@ -1288,5 +1306,3 @@ body {
     }
   }
 }
-
-
