@@ -22,7 +22,7 @@
 body {
   margin: 0;
 
-  > a:first-child {
+  > a {
     display: block;
     padding: 0.5em;
     text-align: center;
@@ -1151,9 +1151,8 @@ body {
             margin-inline-end: auto;
   }
 
-  main,
   article,
-  section {
+  header[role=banner] {
     &:after {
       content: "";
       display: block;
