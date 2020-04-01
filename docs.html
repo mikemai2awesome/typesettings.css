@@ -45,13 +45,13 @@
           <h3>Table of Content</h3>
           <ol>
             <li>
-              <a href="#accessibility">Accessibility</a>
-            </li>
-            <li>
-              <a href="#internationalization">Internationalization</a>
+              <a href="#get-started">Get Started</a>
             </li>
             <li>
               <a href="#page-structure">Page Structure</a>
+            </li>
+            <li>
+              <a href="#internationalization">Internationalization</a>
             </li>
             <li>
               <a href="#navigation">Navigation</a>
@@ -65,17 +65,36 @@
           </ol>
         </section>
         <hr>
-        <section aria-labelledby="accessibility">
-          <h3 id="accessibility">
-            Accessibility
+        <section aria-labelledby="get-started">
+          <h3 id="get-started">
+            Get Started
           </h3>
           <p>
-            Create a skip link for the page by using an <code>&lt;a&gt;</code> element as the direct child of the <code>&lt;body&gt;</code>. Use the same text in the <code>href</code> attribute as the <code>id</code> for the content container.
+            Add <code>data-typesettings</code> attribute to the direct child element of the <code>&lt;body&gt;</code>:
           </p>
-          <pre><code>&lt;body&gt;<br>&nbsp;&nbsp;&lt;a href="#content"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;Skip to content<br>&nbsp;&nbsp;&lt;/a&gt;<br>&lt;/body&gt;</code></pre>
+          <pre><code>&lt;body&gt;<br>&nbsp;&nbsp;&lt;div data-typesettings&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;&lt;/div&gt;<br>&lt;/body&gt;</code></pre>
+        </section>
+        <hr>
+        <section aria-labelledby="page-structure">
+          <h3 id="page-structure">
+            Page Structure
+          </h3>
           <p>
-            <abbr aria-label="Note">📣</abbr>: <em>Accessibility is important and everyone should write better code to support it. Please reference the <abbr aria-label="Web Content Accessibility Guidelines">WCAG</abbr> for <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">writing proper markup</a>.</em>
+            Inside the <code>div[data-typesettings]</code> element, you can divide up the page into main article content and navigation.
           </p>
+          <pre><code>&lt;div data-typesettings&gt;<br>&nbsp;&nbsp;&lt;nav&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;&lt;/nav&gt;<br>&nbsp;&nbsp;&lt;main&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>&nbsp;&nbsp;&lt;/main&gt;<br>&lt;/div&gt;</code></pre>
+          <section aria-labelledby="accessibility">
+            <h4 id="accessibility">
+              Accessibility
+            </h4>
+            <p>
+              Create a skip link for the page by using an <code>&lt;a&gt;</code> element as the direct child of the <code>&lt;body&gt;</code>. Use the same text in the <code>href</code> attribute as the <code>id</code> for the content container.
+            </p>
+            <pre><code>&lt;body&gt;<br>&nbsp;&nbsp;&lt;a href="#content"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;Skip to content<br>&nbsp;&nbsp;&lt;/a&gt;<br>&nbsp;&nbsp;&lt;div data-typesettings&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;main&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article id="content"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/main&gt;<br>&nbsp;&nbsp;&lt;/div&gt;<br>&lt;/body&gt;</code></pre>
+            <p>
+              <abbr aria-label="Note">📣</abbr>: <em>Accessibility is important and everyone should write better code to support it. Please reference the <abbr aria-label="Web Content Accessibility Guidelines">WCAG</abbr> for <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">writing proper markup</a>.</em>
+            </p>
+          </section>
         </section>
         <hr>
         <section aria-labelledby="internationalization">
@@ -131,16 +150,6 @@
               Vertical writing mode for Japanese and Chinese (Traditional) is also supported, see <a href="customize.html">Customize</a> page to find out how to turn on the unique feature.
             </p>
           </section>
-        </section>
-        <hr>
-        <section aria-labelledby="page-structure">
-          <h3 id="page-structure">
-            Page Structure
-          </h3>
-          <p>
-            Inside the <code>div[data-typesettings]</code> element, you can divide up the page into main article content and navigation.
-          </p>
-          <pre><code>&lt;div data-typesettings&gt;<br>&nbsp;&nbsp;&lt;nav&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;&lt;/nav&gt;<br>&nbsp;&nbsp;&lt;main&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>&nbsp;&nbsp;&lt;/main&gt;<br>&lt;/div&gt;</code></pre>
         </section>
         <hr>
         <section aria-labelledby="navigation">
@@ -201,7 +210,7 @@
                 </h4>
               </summary>
               <p>
-                If you want to enable a banner, create a <code>&lt;header&gt;</code> element with the attribute <code>role=&quot;banner&quot;</code>. Banner bleeds out of the article content&rsquo;s max-width and colors are inverted.
+                If you want to enable a banner, create a <code>&lt;header&gt;</code> element with the attribute <code>role="banner"</code>. Banner bleeds out of the article content&rsquo;s max-width and colors are inverted.
               </p>
               <h5>
                 Demo
@@ -217,7 +226,7 @@
               <h5>
                 Code Snippet
               </h5>
-              <pre><code>&lt;header role=&quot;banner&quot;&gt;<br>&nbsp;&nbsp;&hellip;<br>&lt;/header&gt;</code></pre>
+              <pre><code>&lt;header role="banner"&gt;<br>&nbsp;&nbsp;&hellip;<br>&lt;/header&gt;</code></pre>
             </details>
           </section>
           <section aria-labelledby="drop-cap">
@@ -241,9 +250,34 @@
               <h5>
                 Code Snippet
               </h5>
-              <pre><code>&lt;header role=&quot;banner&quot;&gt;<br>&nbsp;&nbsp;&lt;p&gt;&hellip;&lt;/p&gt;<br>&lt;/header&gt;</code></pre>
+              <pre><code>&lt;header role="banner"&gt;<br>&nbsp;&nbsp;&lt;p&gt;&hellip;&lt;/p&gt;<br>&lt;/header&gt;</code></pre>
               <p>
                 <abbr aria-label="Note">📣</abbr>: <em>Drop Cap is only available above 400px viewport.</em>
+              </p>
+            </details>
+          </section>
+          <section aria-labelledby="abbreviation">
+            <details>
+              <summary>
+                <h4 id="abbreviation">
+                  Abbreviation
+                </h4>
+              </summary>
+              <p>
+                You can create a tooltip for words that are abbreviations by using the <code>&lt;abbr&gt;</code> element.
+              </p>
+              <h5>
+                Demo
+              </h5>
+              <p>
+                <abbr aria-label="User Experience">UX</abbr>
+              </p>
+              <h5>
+                Code Snippet
+              </h5>
+              <pre><code>&lt;abbr aria-label="User Experience"&gt;<br>&nbsp;&nbsp;UX<br>&lt;/abbr&gt;</code></pre>
+              <p>
+                <abbr aria-label="Note">📣</abbr>: <em>Make sure to use the <code>aria-label</code> attribute, not the <code>title</code> attribute.</em>
               </p>
             </details>
           </section>
@@ -303,7 +337,7 @@
                 Demo
               </h5>
               <p>
-                Text: <strong>bold</strong>, <em>italic</em>, <a href="javascript:">linked</a>, <abbr aria-label="Abbreviation">abbr</abbr>, <code>code</code>, <kbd>kbd</kbd>, <small>small</small>.
+                Text: <strong>bold</strong>, <em>italic</em>, <a href="javascript:">linked</a>, <code>code</code>, <kbd>kbd</kbd>, <small>small</small>.
               </p>
               <p>
                 Paragraphs. The ultimate measure of a man is not where he stands in moments of comfort and convenience, but where he stands at times of challenge and controversy.
