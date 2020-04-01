@@ -1,5 +1,5 @@
 # Typesettings.css
-Typesettings.css is inspired by traditional graphic design fundamentals & the perfect lite design systems for any minimal website or article design. No colors; no Javascript; no classes required! In version 2.x, the typography scales bigger, the design goes bolder, & contrast gets stronger.
+Typesettings.css is a lite design system for minimal website or article design, inspired by traditional graphic design fundamentals. No colors; no Javascript; no classes required! In version 2.x, the typography scales bigger, the design goes bolder, & contrast gets stronger.
 
 ## Basic Usage
 ### 1. Include typesettings.css in the HTML file's `<head>` section:
@@ -21,6 +21,8 @@ Note: If you are using typesettings.css as is, don't combine it with other frame
   </div>
 </body>
 ```
+
+### [> Read detailed documentations](https://mikemai.net/typesettings/docs.html)
 
 ## Enhanced elements
 All of these HTML elements can be used inside the `div[data-typesettings]` element without any classes. It's that easy!
