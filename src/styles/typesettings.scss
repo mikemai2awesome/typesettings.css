@@ -175,13 +175,13 @@ body {
 
   h1,
   h2 {
-    line-height: calc(var(--ts-line-height-heading) * 0.8);
     -webkit-hyphens: auto;
         -ms-hyphens: auto;
             hyphens: auto;
   }
 
   h1 {
+    line-height: calc(var(--ts-line-height-heading) * 0.8);
     -webkit-margin-after: 0;
             margin-block-end: 0;
     font-size: var(--ts-font-size-xxlarge);
@@ -198,6 +198,8 @@ body {
 
     &:first-child {
       & ~ h2:first-of-type {
+        -webkit-margin-before: calc(var(--ts-paragraph-spacing) * 0.8);
+                margin-block-start: calc(var(--ts-paragraph-spacing) * 0.8);
         -webkit-margin-after: 0;
                 margin-block-end: 0;
         color: var(--ts-color-muted);
