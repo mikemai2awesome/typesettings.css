@@ -90,7 +90,7 @@ body {
   color: var(--ts-color-body);
   line-height: var(--ts-line-height-body);
   letter-spacing: 0.01em;
-  font-family: var(--ts-font-family-serif);
+  font-family: var(--ts-font-family-only-one, var(--ts-font-family-serif));
   font-weight: var(--ts-font-weight-regular);
   font-size: var(--ts-font-size);
   background-color: var(--ts-color-background);
@@ -119,6 +119,7 @@ body {
     &:visited:hover,
     &:focus {
       color: var(--ts-color-muted);
+      border-bottom: 0;
     }
 
     &:active {
@@ -138,7 +139,7 @@ body {
   thead th,
   figcaption,
   blockquote {
-    font-family: var(--ts-font-family-sans);
+    font-family: var(--ts-font-family-only-one, var(--ts-font-family-sans));
   }
 
   h1,
@@ -205,7 +206,7 @@ body {
         color: var(--ts-color-muted);
         letter-spacing: 0.06em;
         text-transform: uppercase;
-        font-family: var(--ts-font-family-sans-alt);
+        font-family: var(--ts-font-family-only-one, var(--ts-font-family-sans-alt));
         font-weight: var(--ts-font-weight-regular);
         font-size: var(--ts-font-size-xsmall);
 
@@ -491,7 +492,7 @@ body {
       &:before,
       &:after {
         color: var(--ts-color-muted);
-        font-family: var(--ts-font-family-serif);
+        font-family: var(--ts-font-family-only-one, var(--ts-font-family-serif));
         font-weight: var(--ts-font-weight-bold);
       }
     }
@@ -562,6 +563,7 @@ body {
     letter-spacing: 0.02em;
     vertical-align: baseline;
     font-style: normal;
+    border: 1px solid var(--ts-color-background);
     background-color: var(--ts-color-subtle);
   }
 
@@ -617,7 +619,7 @@ body {
     z-index: 0;
     color: var(--ts-color-heading);
     cursor: help;
-    border-bottom: 2px dotted;
+    border-bottom: 1px dotted;
 
     &:after {
       content: attr(aria-label);
@@ -639,7 +641,7 @@ body {
       -webkit-hyphens: none;
           -ms-hyphens: none;
               hyphens: none;
-      font-family: var(--ts-font-family-sans-alt);
+      font-family: var(--ts-font-family-only-one, var(--ts-font-family-sans-alt));
       font-size: var(--ts-font-size-xsmall);
       box-shadow: 0 0 0 2px var(--ts-color-background);
       background-color: var(--ts-color-heading);
@@ -647,6 +649,10 @@ body {
 
     &:hover:after {
       display: block;
+    }
+
+    a {
+      border-bottom: none;
     }
   }
 
@@ -1041,7 +1047,7 @@ body {
                     padding-inline-start: calc(var(--ts-paragraph-indent) / 2);
             -webkit-padding-end: calc(var(--ts-paragraph-indent) / 2);
                     padding-inline-end: calc(var(--ts-paragraph-indent) / 2);
-            border: 0
+            border: 0;
           }
         }
 
@@ -1105,11 +1111,11 @@ body {
         0 0.1em 0.1em var(--ts-color-background),
         0 -0.1em 0.1em var(--ts-color-background),
         -0.1em 0 0.1em var(--ts-color-background);
-      font-family: var(--ts-font-family-sans-alt);
+      font-family: var(--ts-font-family-only-one, var(--ts-font-family-sans-alt));
       font-size: var(--ts-font-size-xsmall);
 
       @include respond-to(medium) {
-        border: none;
+        border: 0;
       }
 
       &:visited {
@@ -1177,7 +1183,7 @@ body {
   /* Turn body text to sans-serif */
   &[data-typesettings*=sans-serif] {
     letter-spacing: -0.01em;
-    font-family: var(--ts-font-family-sans);
+    font-family: var(--ts-font-family-only-one, var(--ts-font-family-sans));
 
     @include respond-to(medium) {
       font-size: var(--ts-font-size);
@@ -1197,7 +1203,7 @@ body {
     legend
     figcaption,
     blockquote {
-      font-family: var(--ts-font-family-serif);
+      font-family: var(--ts-font-family-only-one, var(--ts-font-family-serif));
     }
   }
 
@@ -1235,7 +1241,7 @@ body {
 
   /* Create golden ration between the article content and the horizontal white space */
   &[data-typesettings*=golden] {
-    @include respond-to(medium) {
+    @include respond-to(large) {
       main {
         -webkit-padding-start: 19%;
                 padding-inline-start: 19%;
@@ -1307,7 +1313,7 @@ body {
 
     article {
       max-width: 100%;
-      max-height: 66ch;
+      max-height: 100%;
       -webkit-margin-start: 0;
               margin-inline-start: 0;
       -webkit-margin-end: 0;
@@ -1315,9 +1321,13 @@ body {
     }
 
     &[data-typesettings*=golden] {
-      @include respond-to(medium) {
+      @include respond-to(large) {
         article {
           max-height: 33ch;
+          -webkit-margin-start: auto;
+          margin-inline-start: auto;
+          -webkit-margin-end: auto;
+          margin-inline-end: auto;
         }
       }
     }
