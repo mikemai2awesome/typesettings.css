@@ -893,10 +893,6 @@ body {
     text-align: start;
     vertical-align: baseline;
     border-bottom: var(--ts-border-single);
-
-    &:first-child {
-      white-space: nowrap;
-    }
   }
 
   th {
