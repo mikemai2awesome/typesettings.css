@@ -728,7 +728,12 @@ body {
   }
 
   form {
+    font-family: var(--ts-font-family-monospace);
     font-size: var(--ts-font-size-small);
+
+    ol, ul {
+      list-style: none;
+    }
   }
 
   fieldset {
@@ -741,10 +746,10 @@ body {
     -webkit-padding-end: calc(var(--ts-paragraph-indent) * 1.5);
             padding-inline-end: calc(var(--ts-paragraph-indent) * 1.5);
     border: var(--ts-border);
-    background-color: var(--ts-color-subtle);
   }
 
   legend {
+    @extend h6;
     display: table;
     max-width: 100%;
     -webkit-margin-before: 0;
@@ -763,14 +768,9 @@ body {
             padding-inline-start: 3px;
     -webkit-padding-end: 3px;
             padding-inline-end: 3px;
-    color: inherit;
+    color: var(--ts-color-heading);
     white-space: normal;
     line-height: 1;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-    font-family: var(--ts-font-family-monospace);
-    font-weight: var(--ts-font-weight-bold);
-    font-size: var(--ts-font-size-xsmall);
 
     & + * {
       -webkit-margin-before: 0;
@@ -786,6 +786,7 @@ body {
   [type=checkbox],
   [type=radio] {
     padding: 0;
+    transform: scale(var(--ts-line-height-body)) translateY(-1px);
   }
 
   [type=number]::-webkit-inner-spin-button,
@@ -805,7 +806,6 @@ body {
   label {
     cursor: pointer;
     letter-spacing: -0.02em;
-    font-family: var(--ts-font-family-monospace);
   }
 
   progress {
