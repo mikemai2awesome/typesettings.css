@@ -35,4 +35,6 @@
   --ts-border-double: 6px double var(--ts-color-border);
   --ts-border-single: 2px solid var(--ts-color-border);
   --ts-border: var(--ts-border-double);
+  --ts-main-padding-inline: 10vw;
+  --ts-banner-padding-inline: var(--ts-paragraph-indent);
 }
