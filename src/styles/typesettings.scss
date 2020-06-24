@@ -786,7 +786,7 @@ body {
   [type=checkbox],
   [type=radio] {
     padding: 0;
-    transform: scale(var(--ts-line-height-body)) translateY(-1px);
+    transform: scale(var(--ts-line-height-body)) translateY(-1px); // Scales up the input to match the text better. This gets removed in Android Chrome, see end of file.
   }
 
   [type=number]::-webkit-inner-spin-button,
@@ -1400,6 +1400,14 @@ body {
       margin-inline-start: 0;
       -webkit-margin-end: 0;
       margin-inline-end: 0;
+    }
+  }
+
+  // Remove the transform on Android Chrome
+  @media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+    [type="checkbox"]:not(*:root),
+    [type="radio"]:not(*:root) {
+      transform: none;
     }
   }
 }
