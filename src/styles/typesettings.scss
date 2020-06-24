@@ -738,13 +738,13 @@ body {
 
   fieldset {
     -webkit-padding-before: var(--ts-paragraph-spacing);
-            padding-block-start: var(--ts-paragraph-spacing);
+    padding-block-start: var(--ts-paragraph-spacing);
     -webkit-padding-after: var(--ts-paragraph-spacing);
-            padding-block-end: var(--ts-paragraph-spacing);
-    -webkit-padding-start: calc(var(--ts-paragraph-indent) * 1.5);
-            padding-inline-start: calc(var(--ts-paragraph-indent) * 1.5);
-    -webkit-padding-end: calc(var(--ts-paragraph-indent) * 1.5);
-            padding-inline-end: calc(var(--ts-paragraph-indent) * 1.5);
+    padding-block-end: var(--ts-paragraph-spacing);
+    -webkit-padding-start: var(--ts-paragraph-indent);
+    padding-inline-start: var(--ts-paragraph-indent);
+    -webkit-padding-end: var(--ts-paragraph-indent);
+    padding-inline-end: var(--ts-paragraph-indent);
     border: var(--ts-border);
   }
 
@@ -1406,10 +1406,11 @@ body {
   @media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
     [type="checkbox"]:not(*:root),
     [type="radio"]:not(*:root) {
-      transform: none; // Remove the transform on Android Chrome.
+      transform: translateY(1px); // Remove the scaling and move the input down on Android Chrome.
     }
 
     form:not(*:root) {
+      line-height: var(--ts-line-height-heading);
       font-size: inherit; // Reset font-size on Android Chrome.
     }
   }
