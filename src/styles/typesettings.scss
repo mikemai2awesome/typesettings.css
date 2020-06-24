@@ -1403,11 +1403,14 @@ body {
     }
   }
 
-  // Remove the transform on Android Chrome
   @media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
     [type="checkbox"]:not(*:root),
     [type="radio"]:not(*:root) {
-      transform: none;
+      transform: none; // Remove the transform on Android Chrome.
+    }
+
+    form:not(*:root) {
+      font-size: inherit; // Reset font-size on Android Chrome.
     }
   }
 }
