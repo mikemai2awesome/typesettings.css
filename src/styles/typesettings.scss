@@ -3,7 +3,6 @@
 @import 'tool-breakpoint';
 @import 'tool-palettes';
 @import 'tool-invert';
-@import 'tool-fullbleed';
 @import 'config';
 
 /* ------------------------------------ *\
@@ -928,7 +927,6 @@ body {
     }
 
     > ul {
-      @include fullbleed;
       flex-direction: row;
       justify-content: space-between;
       -webkit-padding-before: calc(var(--ts-paragraph-spacing) / 2);
