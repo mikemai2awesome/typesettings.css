@@ -927,6 +927,7 @@ body {
     }
 
     > ul {
+      position: relative;
       flex-direction: row;
       justify-content: space-between;
       -webkit-padding-before: calc(var(--ts-paragraph-spacing) / 2);
@@ -1328,17 +1329,13 @@ body {
     }
 
     nav {
-      height: 100vh;
       text-align: justify;
 
       > ul {
-        right: auto;
-        left: auto;
-        width: auto;
         -webkit-margin-end: 0;
-                margin-inline-end: 0;
+        margin-inline-end: 0;
         -webkit-margin-start: 0;
-                margin-inline-start: 0;
+        margin-inline-start: 0;
 
         > li:nth-of-type(1) {
           a {
