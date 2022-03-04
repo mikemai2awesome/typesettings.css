@@ -70,7 +70,7 @@ body {
     line-height: calc(var(--ts-line-height-body) * 0.95);
     text-transform: uppercase;
     font-weight: var(--ts-font-weight-bold);
-    font-size: calc(var(--ts-font-size-lede) * 2.2);
+    font-size: clamp(calc(var(--ts-font-size-lede) * 2.2), 6vw, calc(var(--ts-font-size-lede) * 2.4));
     border: var(--ts-border);
 
     @at-root [dir=rtl] #{&} {
@@ -95,16 +95,8 @@ body {
   letter-spacing: 0.01em;
   font-family: var(--ts-font-family-only-one, var(--ts-font-family-serif));
   font-weight: var(--ts-font-weight-regular);
-  font-size: var(--ts-font-size);
+  font-size: clamp(var(--ts-font-size), 2vw, calc(var(--ts-font-size) * 1.2));
   background-color: var(--ts-color-background);
-
-  @include respond-to(medium) {
-    font-size: calc(var(--ts-font-size) * 1.1);
-  }
-
-  @include respond-to(large) {
-    font-size: calc(var(--ts-font-size) * 1.2);
-  }
 
   a {
     text-decoration: none;
@@ -188,17 +180,8 @@ body {
     line-height: calc(var(--ts-line-height-heading) * 0.8);
     -webkit-margin-after: 0;
             margin-block-end: 0;
-    font-size: var(--ts-font-size-xxlarge);
-
-    @include respond-to(medium) {
-      letter-spacing: -0.01em;
-      font-size: calc(var(--ts-font-size-xxlarge) * 1.28);
-    }
-
-    @include respond-to(large) {
-      letter-spacing: -0.02em;
-      font-size: calc(var(--ts-font-size-xxlarge) * 1.56);
-    }
+    letter-spacing: clamp(-0.01em, -1vw, -0.02em);
+    font-size: clamp(var(--ts-font-size-xxlarge), 6vw, calc(var(--ts-font-size-xxlarge) * 1.56));
 
     &:first-of-type {
       & + h2 {
@@ -211,15 +194,7 @@ body {
         text-transform: uppercase;
         font-family: var(--ts-font-family-only-one, var(--ts-font-family-sans-alt));
         font-weight: var(--ts-font-weight-regular);
-        font-size: var(--ts-font-size-xsmall);
-
-        @include respond-to(medium) {
-          font-size: calc(var(--ts-font-size-xsmall) * 1.14);
-        }
-
-        @include respond-to(large) {
-          font-size: calc(var(--ts-font-size-xsmall) * 1.29);
-        }
+        font-size: clamp(var(--ts-font-size-xsmall), 6vw, calc(var(--ts-font-size-xsmall) * 1.29));
       }
     }
   }
@@ -234,67 +209,30 @@ body {
 
   header p {
     color: var(--ts-color-heading);
-    font-size: var(--ts-font-size-lede);
-
-    @include respond-to(medium) {
-      font-size: calc(var(--ts-font-size-lede) * 1.1);
-    }
-
-    @include respond-to(large) {
-      font-size: calc(var(--ts-font-size-lede) * 1.2);
-    }
+    font-size: clamp(var(--ts-font-size-lede), 2vw, calc(var(--ts-font-size-lede) * 1.2));
   }
 
   h2 {
-    font-size: var(--ts-font-size-xlarge);
-
-    @include respond-to(medium) {
-      font-size: calc(var(--ts-font-size-xlarge) * 1.29);
-    }
-
-    @include respond-to(large) {
-      letter-spacing: -0.01em;
-      font-size: calc(var(--ts-font-size-xlarge) * 1.57);
-    }
+    letter-spacing: clamp(0em, -1vw, -0.01em);
+    font-size: clamp(var(--ts-font-size-xlarge), 6vw, calc(var(--ts-font-size-xlarge) * 1.57));
   }
 
   h3 {
-    font-size: var(--ts-font-size-large);
-
-    @include respond-to(medium) {
-      font-size: calc(var(--ts-font-size-large) * 1.17);
-    }
-
-    @include respond-to(large) {
-      font-size: calc(var(--ts-font-size-large) * 1.5);
-    }
+    font-size: clamp(var(--ts-font-size-large), 6vw, calc(var(--ts-font-size-large) * 1.5));
   }
 
   h4 {
-    font-size: var(--ts-font-size-medium);
-
-    @include respond-to(medium) {
-      font-size: calc(var(--ts-font-size-medium) * 1.1);
-    }
-
-    @include respond-to(large) {
-      font-size: calc(var(--ts-font-size-medium) * 1.4);
-    }
+    font-size: clamp(var(--ts-font-size-medium), 6vw, calc(var(--ts-font-size-medium) * 1.4));
   }
 
   h5 {
     -webkit-margin-before: calc(var(--ts-paragraph-spacing) * 1.28);
             margin-block-start: calc(var(--ts-paragraph-spacing) * 1.28);
-    font-size: var(--ts-font-size-small);
+    font-size: clamp(var(--ts-font-size-small), 6vw, calc(var(--ts-font-size-small) * 1.375));
 
     @include respond-to(medium) {
       -webkit-margin-before: calc(var(--ts-paragraph-spacing) * 1.11);
               margin-block-start: calc(var(--ts-paragraph-spacing) * 1.11);
-      font-size: calc(var(--ts-font-size-small) * 1.125);
-    }
-
-    @include respond-to(large) {
-      font-size: calc(var(--ts-font-size-small) * 1.375);
     }
   }
 
@@ -303,7 +241,7 @@ body {
             margin-block-start: calc(var(--ts-paragraph-spacing) * 1.44);
     text-transform: uppercase;
     letter-spacing: 0.01em;
-    font-size: var(--ts-font-size-xsmall);
+    font-size: clamp(var(--ts-font-size-xsmall), 6vw, calc(var(--ts-font-size-xsmall) * 1.14));
 
     @include respond-to(medium) {
       -webkit-margin-before: calc(var(--ts-paragraph-spacing) * 1.28);
@@ -313,7 +251,6 @@ body {
     @include respond-to(large) {
       -webkit-margin-before: calc(var(--ts-paragraph-spacing) * 1.11);
               margin-block-start: calc(var(--ts-paragraph-spacing) * 1.11);
-      font-size: calc(var(--ts-font-size-xsmall) * 1.14);
     }
   }
 
@@ -480,15 +417,7 @@ body {
     border-bottom: var(--ts-border);
 
     p {
-      font-size: var(--ts-font-size-large);
-
-      @include respond-to(medium) {
-        font-size: calc(var(--ts-font-size-large) * 1.08);
-      }
-
-      @include respond-to(large) {
-        font-size: calc(var(--ts-font-size-large) * 1.25);
-      }
+      font-size: clamp(var(--ts-font-size-large), 2vw, calc(var(--ts-font-size-large) * 1.25));
     }
 
     q {
@@ -1189,14 +1118,7 @@ body {
   &[data-typesettings*=sans-serif] {
     letter-spacing: -0.01em;
     font-family: var(--ts-font-family-only-one, var(--ts-font-family-sans));
-
-    @include respond-to(medium) {
-      font-size: var(--ts-font-size);
-    }
-
-    @include respond-to(large) {
-      font-size: calc(var(--ts-font-size) * 1.1);
-    }
+    font-size: clamp(var(--ts-font-size), 2vw, calc(var(--ts-font-size) * 1.1));
 
     h1,
     h2,
