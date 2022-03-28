@@ -551,7 +551,7 @@ body {
     z-index: 0;
     color: var(--ts-color-heading);
     cursor: help;
-    border-bottom: 1px dotted;
+    border-bottom: 3px dotted var(--ts-color-border);
 
     &:after {
       content: attr(aria-label);
@@ -975,6 +975,11 @@ body {
 
       @include respond-to(medium) {
         border: 0;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
       }
 
       &:visited {

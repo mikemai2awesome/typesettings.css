@@ -62,9 +62,9 @@ $palettes: (
   ),
   gray: (
     xlight:  darken($color-white, 4%),
-    light:   darken($color-white, 6%),
-    initial: #666,
-    dark:    #464646
+    light:   darken($color-white, 16%),
+    initial: darken($color-white, 52%),
+    dark:   darken($color-white, 66%)
   ),
   black: (
     initial: $color-black
