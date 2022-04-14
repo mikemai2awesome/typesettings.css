@@ -70,7 +70,7 @@ body {
     line-height: calc(var(--ts-line-height-body) * 0.95);
     text-transform: uppercase;
     font-weight: var(--ts-font-weight-bold);
-    font-size: clamp(calc(var(--ts-font-size-lede) * 2.2), 6vw, calc(var(--ts-font-size-lede) * 2.4));
+    font-size: clamp(calc(var(--ts-font-size-lede) * 2.2), 5.5vw, calc(var(--ts-font-size-lede) * 2.4));
     border: var(--ts-border);
 
     @at-root [dir=rtl] #{&} {
