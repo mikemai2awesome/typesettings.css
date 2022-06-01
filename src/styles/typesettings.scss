@@ -1110,6 +1110,15 @@ body {
     background-color: var(--ts-color-background) !important;
   }
 
+  /* Auto mode */
+  @media (prefers-color-scheme: dark){
+    &[data-typesettings*=auto] {
+      @include invert-mode;
+      color: var(--ts-color-body) !important;
+      background-color: var(--ts-color-background) !important;
+    }
+  }
+
   /* Turn body text to sans-serif */
   &[data-typesettings*=sans-serif] {
     letter-spacing: -0.01em;
