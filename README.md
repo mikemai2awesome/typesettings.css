@@ -22,7 +22,7 @@ Note: If you are using typesettings.css as is, don't combine it with other frame
 </body>
 ```
 
-### [> Read detailed documentations](https://mikemai.net/typesettings/docs.html)
+### 👉 [Read full documentation](https://mikemai.net/typesettings/docs.html)
 
 ## Enhanced elements
 All of these HTML elements can be used inside the `div[data-typesettings]` element without any classes. It's that easy!
@@ -57,4 +57,4 @@ All of these HTML elements can be used inside the `div[data-typesettings]` eleme
 This framework is built for all browsers but IE, cuz fuck it.
 
 ## Language Support
-Japanese, Chinese (Traditional), and English.
+All languages. Also accommodates right to left and vertical reading mode.
